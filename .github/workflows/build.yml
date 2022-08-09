@@ -22,4 +22,4 @@ jobs:
       - name: Build & Test
         run: |
           npm run package:build
-          npm run pcckage:test:unit
+          npm run package:test:unit
