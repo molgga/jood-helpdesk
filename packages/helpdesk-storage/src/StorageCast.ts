@@ -1,11 +1,6 @@
 import { Subject, Subscription } from 'rxjs';
 import { filter } from 'rxjs/operators';
-import {
-  StorageCastObserver,
-  StorageCastEvent,
-  StorageCastConfig,
-  StorageCastDispatchType,
-} from './types';
+import { StorageCastObserver, StorageCastEvent, StorageCastConfig, StorageCastDispatchType } from './types';
 
 /**
  * storage 이벤트를 이용해 다중 웹뷰(탭)에 이벤트를 전파하기 위한 용도.
@@ -38,16 +33,16 @@ import {
  * @see https://developer.mozilla.org/en-US/docs/Web/API/Window/storage_event
  */
 export class StorageCast {
-  protected _window: Window;
-  protected _init: boolean;
-  protected _subject: Subject<StorageCastEvent>;
-  protected _configStorageKey: string;
-  protected _configRemoveDispatched: boolean;
-  protected _onStorage: any;
+  private bindedWindow: Window;
+  private isInitialize: boolean;
+  private castSubject: Subject<StorageCastEvent>;
+  private configStorageKey: string;
+  private configRemoveDispatched: boolean;
+  private handleStorage: any;
   readonly storageEventName = 'storage';
 
   get window() {
-    return this._window || window;
+    return this.bindedWindow || window;
   }
 
   get document() {
@@ -59,31 +54,31 @@ export class StorageCast {
   }
 
   bindWindow(win: Window) {
-    this._window = win;
+    this.bindedWindow = win;
   }
 
   /**
    * 초기화
    */
   init(config: StorageCastConfig) {
-    if (this._init) return;
+    if (this.isInitialize) return;
     const { storageKey, removeDispatched = true } = config;
-    this._configStorageKey = storageKey;
-    this._configRemoveDispatched = removeDispatched;
-    this._subject = new Subject();
-    this._init = true;
-    this._onStorage = this.onStorage.bind(this);
-    this.window.addEventListener(this.storageEventName, this._onStorage);
+    this.configStorageKey = storageKey;
+    this.configRemoveDispatched = removeDispatched;
+    this.castSubject = new Subject();
+    this.isInitialize = true;
+    this.handleStorage = this.onStorage.bind(this);
+    this.window.addEventListener(this.storageEventName, this.handleStorage);
   }
 
   /**
    * 파기
    */
   destroy() {
-    this.window.removeEventListener(this.storageEventName, this._onStorage);
-    this._window = undefined;
-    this._subject.unsubscribe();
-    this._subject = undefined;
+    this.window.removeEventListener(this.storageEventName, this.handleStorage);
+    this.bindedWindow = undefined;
+    this.castSubject.unsubscribe();
+    this.castSubject = undefined;
   }
 
   /**
@@ -96,7 +91,7 @@ export class StorageCast {
     const focus = this.document.hasFocus();
     const visibility = this.document.visibilityState;
     const isFocusOut = !focus || visibility === 'hidden';
-    const isSameKey = key === this._configStorageKey;
+    const isSameKey = key === this.configStorageKey;
     const isChanged = oldValue !== newValue;
     if (isFocusOut && isSameKey && isChanged) {
       let value: any = {};
@@ -106,7 +101,7 @@ export class StorageCast {
         console.log(err);
       }
       const { dispatchType, data: dispatchValue } = value;
-      this._subject.next({
+      this.castSubject.next({
         key,
         event: evt,
         dispatchType,
@@ -122,9 +117,9 @@ export class StorageCast {
    */
   dispatch(dispatchType: StorageCastDispatchType, serializableData?: any) {
     const value = JSON.stringify({ dispatchType, data: serializableData, stamp: Date.now() });
-    this.localStorage.setItem(this._configStorageKey, value);
-    if (this._configRemoveDispatched) {
-      this.localStorage.removeItem(this._configStorageKey);
+    this.localStorage.setItem(this.configStorageKey, value);
+    if (this.configRemoveDispatched) {
+      this.localStorage.removeItem(this.configStorageKey);
     }
   }
 
@@ -133,13 +128,8 @@ export class StorageCast {
    * @param dispatchType 관찰할 전파명
    * @param observer 응답 핸들러
    */
-  observe<T = any>(
-    dispatchType: StorageCastDispatchType,
-    observer: StorageCastObserver<T>
-  ): Subscription {
-    return this._subject
-      .pipe(filter((evt) => evt.dispatchType === dispatchType))
-      .subscribe(observer);
+  observe<T = any>(dispatchType: StorageCastDispatchType, observer: StorageCastObserver<T>): Subscription {
+    return this.castSubject.pipe(filter((evt) => evt.dispatchType === dispatchType)).subscribe(observer);
   }
 
   /**
@@ -147,6 +137,6 @@ export class StorageCast {
    * @param observer 응답 핸들러
    */
   observeAny<T = any>(observer: StorageCastObserver<T>): Subscription {
-    return this._subject.subscribe(observer);
+    return this.castSubject.subscribe(observer);
   }
 }

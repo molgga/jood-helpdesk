@@ -16,12 +16,12 @@ enum InsertType {
  * @template D 저장 데이터 타입
  */
 export class ArchiveList<D = any> {
-  protected archiveKey: string;
-  protected archiveMax: number;
-  protected dataExpire: number = 0;
-  protected findExist: ArchiveFindExistFunction<D>;
-  protected existProcessType: ArchiveExistProcessType;
-  protected storage: Storage;
+  private archiveKey: string;
+  private archiveMax: number;
+  private dataExpire: number = 0;
+  private findExist: ArchiveFindExistFunction<D>;
+  private existProcessType: ArchiveExistProcessType;
+  private storage: Storage;
 
   constructor(storage: Storage) {
     this.storage = storage;
@@ -94,7 +94,7 @@ export class ArchiveList<D = any> {
     this.storage.setItem(this.key, JSON.stringify(aliveList));
   }
 
-  protected insert(insertType: InsertType, data: D) {
+  private insert(insertType: InsertType, data: D) {
     const list = this.getList();
     const expireAt = this.nowExpireAt();
     const findExistIndex = this.findExist ? this.findExist(data, list) : -1;

@@ -6,9 +6,9 @@ import { ArchiveRow, ArchiveDataConfig } from './types';
  * @template D 저장 데이터 타입
  */
 export class ArchiveData<D = any> {
-  protected archiveKey: string;
-  protected dataExpire: number = 0;
-  protected storage: Storage;
+  private archiveKey: string;
+  private dataExpire: number = 0;
+  private storage: Storage;
 
   constructor(storage: Storage) {
     this.storage = storage;
