@@ -1,0 +1,21 @@
+{
+  "name": "@jood/helpdesk-date",
+  "version": "0.0.1",
+  "main": "dist/index.umd.js",
+  "module": "dist/index.umd.js",
+  "types": "dist/index.umd.d.ts",
+  "publishConfig": {},
+  "files": [
+    "dist"
+  ],
+  "license": "MIT",
+  "scripts": {
+    "build": "rollup -c",
+    "build:watch": "rollup -c -w",
+    "test:unit": "jest"
+  },
+  "dependencies": {},
+  "devDependencies": {},
+  "homepage": "",
+  "keywords": []
+}
