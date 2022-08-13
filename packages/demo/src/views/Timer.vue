@@ -11,6 +11,9 @@
         <dt>MinuteTimer</dt>
         <dd>{{ viewState.labelMinute }}</dd>
       </dl>
+      <div>
+        <button @click="onForceMinuteTimerExecute">onForceMinuteTimerExecute</button>
+      </div>
     </div>
   </div>
 </template>
@@ -37,27 +40,38 @@ export default defineComponent({
     });
 
     const serverTime = Date.now(); // - 1000 * 60 * 60 * 2;
-    const secondTimer = new SecondTimer();
-    const secondListener = secondTimer.observe().subscribe(() => {
+
+    const onSecondUpdated = () => {
       console.log('SeconTimer::now:', new Date().toLocaleString());
       console.log('SeconTimer::gap:', new Date(serverTime + secondTimer.getExecuteGap()).toLocaleString());
       state.secondDate = new Date(serverTime + secondTimer.getExecuteGap());
-    });
-    secondTimer.start();
+    };
 
-    const minuteTimer = new MinuteTimer();
-    const minuteListener = minuteTimer.observe().subscribe(() => {
+    const onMinuteUpdated = () => {
       console.log(' ################################ ');
       console.log('MinuteTimer::now:', new Date().toLocaleString());
       console.log('MinuteTimer::gap:', new Date(serverTime + minuteTimer.getExecuteGap()).toLocaleString());
       console.log(' ================================ ');
       state.minuteDate = new Date(serverTime + minuteTimer.getExecuteGap());
-    });
+    };
+
+    const onForceMinuteTimerExecute = () => {
+      minuteTimer.executeTimout();
+      onMinuteUpdated();
+    };
+
+    const secondTimer = new SecondTimer();
+    const secondListener = secondTimer.observe().subscribe(onSecondUpdated);
+    secondTimer.start();
+
+    const minuteTimer = new MinuteTimer();
+    const minuteListener = minuteTimer.observe().subscribe(onMinuteUpdated);
     minuteTimer.start();
 
-    console.log(new Date().toLocaleString());
     state.secondDate = new Date(serverTime + secondTimer.getExecuteGap());
     state.minuteDate = new Date(serverTime + minuteTimer.getExecuteGap());
+
+    console.log(new Date().toLocaleString());
 
     onUnmounted(() => {
       secondListener.unsubscribe();
@@ -66,6 +80,7 @@ export default defineComponent({
     return {
       state,
       viewState,
+      onForceMinuteTimerExecute,
     };
   },
 });

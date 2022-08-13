@@ -71,11 +71,12 @@ export class Timer {
   /**
    * 타이머 실행
    */
-  protected executeTimout() {
+  executeTimout() {
     clearTimeout(this.timer);
     const date = this.nowDate();
     const nextGap = this.getNextGap(date) + this.executeSafeGap;
     this.executeAt = date.getTime();
+    this.executeGap = this.executeAt - this.startAt;
     this.timer = setTimeout(() => {
       this.dispatch();
       this.executeTimout();
