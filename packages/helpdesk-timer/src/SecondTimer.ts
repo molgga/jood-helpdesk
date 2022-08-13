@@ -4,7 +4,7 @@ import { Timer } from './Timer';
  * 초 단위 타이머
  */
 export class SecondTimer extends Timer {
-  protected fallbackLooseTimeout = 100;
+  protected fallbackLooseTimeout = 200;
 
   protected getNextGap(date: Date) {
     const nowSecond = date.getMilliseconds();

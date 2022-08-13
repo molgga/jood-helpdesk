@@ -17,7 +17,9 @@ export class Timer {
   protected timezoneOffset = 540;
   protected startAt = 0;
   protected executeAt = 0;
+  protected executedAt = 0;
   protected executeGap = 0;
+  protected executeSafeGap = 10;
   protected subject: Subject<void>;
   protected observable: Observable<void>;
   protected isDestroy = false;
@@ -46,10 +48,10 @@ export class Timer {
   }
 
   /**
-   * minuteTimer 가 분 단위로 execute 되었을 때 시간
+   * 타이머가 시작된 시간
    */
-  getCurrentNowAt() {
-    return this.executeAt;
+  getStartAt() {
+    return this.startAt;
   }
 
   /**
@@ -59,12 +61,21 @@ export class Timer {
     return this.executeGap;
   }
 
+  /**
+   * 오차가 생길 수 있다는 점을 보완하기 위해 timeout 실행시 nextGap 에 더해서 실행할 시간
+   */
+  setExecuteSafeGap(gap: number) {
+    this.executeSafeGap = gap;
+  }
+
+  /**
+   * 타이머 실행
+   */
   protected executeTimout() {
     clearTimeout(this.timer);
     const date = this.nowDate();
-    const nextGap = this.getNextGap(date);
+    const nextGap = this.getNextGap(date) + this.executeSafeGap;
     this.executeAt = date.getTime();
-    this.executeGap += nextGap;
     this.timer = setTimeout(() => {
       this.dispatch();
       this.executeTimout();
@@ -76,19 +87,30 @@ export class Timer {
     }
   }
 
+  /**
+   * executeTimout 의 다음 실행 시간
+   */
   protected getNextGap(date: Date) {
     const gap = date.getMilliseconds();
     const nextGap = 1000 - gap; // 후에 timeout 실행
     return nextGap;
   }
 
+  /**
+   * 타이머의 대상 시간이 변경되었는지 여부
+   */
   protected isTargetChanged() {
     return false;
   }
 
+  /**
+   * 타이머의 대상 시간이 변경시 전파
+   */
   protected dispatch() {
     if (this.isDestroy) return;
     if (!this.isTargetChanged()) return;
+    this.executedAt = this.nowDate().getTime();
+    this.executeGap = this.executedAt - this.startAt;
     this.subject.next();
   }
 
