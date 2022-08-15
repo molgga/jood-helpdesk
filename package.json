@@ -8,7 +8,6 @@
   "description": "",
   "license": "MIT",
   "scripts": {
-    "serve:demo": "yarn workspace demo serve",
     "bootstrap": "yarn run bootstrap:install && yarn run package:build",
     "bootstrap:install": "yarn install --production=false",
     "package:build": "yarn run helpdesk-core:build && yarn run helpdesk-date:build && yarn run helpdesk-storage:build  && yarn run helpdesk-string:build && yarn run helpdesk-timer:build",
@@ -22,7 +21,8 @@
     "helpdesk-string:build": "yarn workspace @jood/helpdesk-string build",
     "helpdesk-string:test:unit": "yarn workspace @jood/helpdesk-string test:unit",
     "helpdesk-timer:build": "yarn workspace @jood/helpdesk-timer build",
-    "helpdesk-timer:test:unit": "yarn workspace @jood/helpdesk-timer test:unit"
+    "helpdesk-timer:test:unit": "yarn workspace @jood/helpdesk-timer test:unit",
+    "docs:build": "yarn workspace document build"
   },
   "keywords": [],
   "devDependencies": {

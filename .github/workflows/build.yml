@@ -24,3 +24,12 @@ jobs:
 
       - name: Test
         run: yarn run package:test:unit
+
+      - name: Documentation:build
+        run: yarn run docs:build
+
+      - name: Documentation:deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: pacakges/document/docs/.vitepress/dist

@@ -12,7 +12,7 @@ export default {
       },
     },
   },
-  // base: '/jood-helpdesk', // https://molgga.github.io/jood-helpdesk/
+  base: '/jood-helpdesk', // https://molgga.github.io/jood-helpdesk/
   themeConfig: {
     siteTitle: 'jood-helpdesk',
     nav: [
