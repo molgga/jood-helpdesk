@@ -1,7 +1,6 @@
 .DS_Store
 
 # compiled output
-docs
 dist
 dist-tsc
 coverage
