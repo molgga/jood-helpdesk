@@ -25,11 +25,18 @@
 </template>
 
 <script lang="ts">
-import { computed, defineComponent, onUnmounted, reactive } from 'vue';
+import { computed, defineComponent, onMounted, onUnmounted, reactive } from 'vue';
 import { SecondTimer, MinuteTimer } from '@jood/helpdesk-timer';
+import { Subscription } from 'rxjs';
 
 export default defineComponent({
   setup() {
+    const secondTimer = new SecondTimer();
+    const minuteTimer = new MinuteTimer();
+    const listener = new Subscription();
+    const serverTime = Date.now(); // - 1000 * 60 * 60 * 2;
+    let startTimezone = new Date().getTimezoneOffset();
+
     const state = reactive({
       secondDate: null,
       minuteDate: null,
@@ -39,10 +46,10 @@ export default defineComponent({
 
     const viewState = computed(() => {
       const { secondDate, secondDateKr, minuteDate, minuteDateKr } = state;
-      const labelSecond = secondDate.toLocaleString();
-      const labelMinute = minuteDate.toLocaleString();
-      const labelSecondKr = secondDateKr.toLocaleString();
-      const labelMinuteKr = minuteDateKr.toLocaleString();
+      const labelSecond = secondDate?.toLocaleString() || '';
+      const labelMinute = minuteDate?.toLocaleString() || '';
+      const labelSecondKr = secondDateKr?.toLocaleString() || '';
+      const labelMinuteKr = minuteDateKr?.toLocaleString() || '';
       return {
         labelSecond,
         labelMinute,
@@ -50,11 +57,6 @@ export default defineComponent({
         labelMinuteKr,
       };
     });
-
-    const serverTime = Date.now(); // - 1000 * 60 * 60 * 2;
-    let startTimezone = new Date().getTimezoneOffset();
-
-    console.log(serverTime);
 
     const onSecondUpdated = () => {
       updateSecondTimer();
@@ -97,24 +99,23 @@ export default defineComponent({
       onMinuteUpdated();
     };
 
-    const secondTimer = new SecondTimer();
-    const secondListener = secondTimer.observe().subscribe(onSecondUpdated);
-    secondTimer.start();
+    onMounted(() => {
+      listener.add(secondTimer.observe().subscribe(onSecondUpdated));
+      secondTimer.start();
 
-    const minuteTimer = new MinuteTimer();
-    const minuteListener = minuteTimer.observe().subscribe(onMinuteUpdated);
-    minuteTimer.start();
+      listener.add(minuteTimer.observe().subscribe(onMinuteUpdated));
+      minuteTimer.start();
 
-    // state.secondDate = new Date(serverTime + secondTimer.getExecuteGap());
-    // state.minuteDate = new Date(serverTime + minuteTimer.getExecuteGap());
-    updateSecondTimer();
-    updateMinuteTimer();
+      // state.secondDate = new Date(serverTime + secondTimer.getExecuteGap());
+      // state.minuteDate = new Date(serverTime + minuteTimer.getExecuteGap());
+      updateSecondTimer();
+      updateMinuteTimer();
 
-    console.log(new Date().toLocaleString());
+      console.log(new Date().toLocaleString());
+    });
 
     onUnmounted(() => {
-      secondListener.unsubscribe();
-      minuteListener.unsubscribe();
+      listener.unsubscribe();
     });
     return {
       state,

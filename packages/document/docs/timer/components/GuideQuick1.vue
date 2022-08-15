@@ -14,11 +14,16 @@
 </template>
 
 <script lang="ts">
-import { computed, defineComponent, onUnmounted, reactive } from 'vue';
+import { computed, defineComponent, onMounted, onUnmounted, reactive } from 'vue';
 import { SecondTimer, MinuteTimer } from '@jood/helpdesk-timer';
+import { Subscription } from 'rxjs';
 
 export default defineComponent({
   setup() {
+    const secondTimer = new SecondTimer();
+    const minuteTimer = new MinuteTimer();
+    const listener = new Subscription();
+
     const serverTime = Date.now();
     const state = reactive({
       secondDate: null,
@@ -27,8 +32,8 @@ export default defineComponent({
 
     const viewState = computed(() => {
       const { secondDate, minuteDate } = state;
-      const labelSecondTimer = secondDate.toLocaleString();
-      const labelMinuteTimer = minuteDate.toLocaleString();
+      const labelSecondTimer = secondDate?.toLocaleString() || '';
+      const labelMinuteTimer = minuteDate?.toLocaleString() || '';
       return {
         labelSecondTimer,
         labelMinuteTimer,
@@ -53,22 +58,21 @@ export default defineComponent({
       state.minuteDate = new Date(timeAt);
     };
 
-    const secondTimer = new SecondTimer();
-    const secondListener = secondTimer.observe().subscribe(onSecondUpdated);
-    secondTimer.start();
+    onMounted(() => {
+      listener.add(secondTimer.observe().subscribe(onSecondUpdated));
+      secondTimer.start();
 
-    const minuteTimer = new MinuteTimer();
-    const minuteListener = minuteTimer.observe().subscribe(onMinuteUpdated);
-    minuteTimer.start();
+      listener.add(minuteTimer.observe().subscribe(onMinuteUpdated));
+      minuteTimer.start();
 
-    updateSecondTimer();
-    updateMinuteTimer();
+      updateSecondTimer();
+      updateMinuteTimer();
+    });
 
     onUnmounted(() => {
       secondTimer.stop();
       minuteTimer.stop();
-      secondListener.unsubscribe();
-      minuteListener.unsubscribe();
+      listener.unsubscribe();
     });
 
     return {
