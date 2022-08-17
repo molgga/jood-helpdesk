@@ -1,5 +1,30 @@
 import path from 'path';
 
+const IS_BUILD = process.env.BUILD;
+
+const sidebar = [
+  {
+    text: '@jood/helpdesk-date',
+    items: [
+      { text: 'toDiffHMS', link: '/date/to-diff-hms' },
+      { text: 'toPast', link: '/date/to-past' },
+    ],
+  },
+  {
+    text: '@jood/helpdesk-timer',
+    items: [{ text: '시작하기', link: '/timer/getting-started' }],
+  },
+];
+
+(() => {
+  if (!IS_BUILD) {
+    sidebar.push({
+      text: 'vitepress-example',
+      items: [{ text: 'example', link: '/example/index' }],
+    });
+  }
+})();
+
 export default {
   vite: {
     resolve: {
@@ -12,35 +37,13 @@ export default {
       },
     },
   },
-  base: '/jood-helpdesk', // https://molgga.github.io/jood-helpdesk/
+  base: IS_BUILD ? '/jood-helpdesk' : '', // https://molgga.github.io/jood-helpdesk/
   themeConfig: {
     siteTitle: 'jood-helpdesk',
     nav: [
       { text: 'Home', link: '/' },
       { text: 'Github', link: 'https://github.com/molgga/jood-helpdesk' },
     ],
-    sidebar: [
-      {
-        text: '@jood/helpdesk',
-        items: [
-          { text: '소개', link: '/' },
-          { text: '빠른 시작', link: '/quick-started' },
-        ],
-      },
-      {
-        text: '@jood/helpdesk-timer',
-        items: [
-          { text: '설치 및 시작', link: '/timer/getting-started' },
-          { text: '간단한 사용방법', link: '/timer/guide-quick' },
-          { text: 'SecondTimer', link: '/timer/second-timer' },
-          { text: 'MinuteTimer', link: '/timer/minute-timer' },
-        ],
-      },
-
-      {
-        text: 'vitepress-example',
-        items: [{ text: 'example', link: '/example/index' }],
-      },
-    ],
+    sidebar,
   },
 };

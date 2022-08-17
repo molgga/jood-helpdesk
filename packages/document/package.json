@@ -5,8 +5,8 @@
   "license": "MIT",
   "scripts": {
     "dev": "vitepress dev docs --port 8081",
-    "build": "vitepress build docs",
-    "serve": "vitepress serve docs --port 3000"
+    "build": "BUILD=1 vitepress build docs",
+    "serve": "BUILD=1 vitepress serve docs --port 3000"
   },
   "devDependencies": {
     "vitepress": "^1.0.0-alpha.4",
