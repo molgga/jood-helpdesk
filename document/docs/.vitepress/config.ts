@@ -29,11 +29,11 @@ export default {
   vite: {
     resolve: {
       alias: {
-        '@jood/helpdesk-core': path.resolve(__dirname, '../../../helpdesk-core/src'),
-        '@jood/helpdesk-date': path.resolve(__dirname, '../../../helpdesk-date/src'),
-        '@jood/helpdesk-storage': path.resolve(__dirname, '../../../helpdesk-storage/src'),
-        '@jood/helpdesk-string': path.resolve(__dirname, '../../../helpdesk-string/src'),
-        '@jood/helpdesk-timer': path.resolve(__dirname, '../../../helpdesk-timer/src'),
+        '@jood/helpdesk-core': path.resolve(__dirname, '../../../packages/helpdesk-core/src'),
+        '@jood/helpdesk-date': path.resolve(__dirname, '../../../packages/helpdesk-date/src'),
+        '@jood/helpdesk-storage': path.resolve(__dirname, '../../../packages/helpdesk-storage/src'),
+        '@jood/helpdesk-string': path.resolve(__dirname, '../../../packages/helpdesk-string/src'),
+        '@jood/helpdesk-timer': path.resolve(__dirname, '../../../packages/helpdesk-timer/src'),
       },
     },
   },

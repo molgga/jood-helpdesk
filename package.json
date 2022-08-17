@@ -3,7 +3,8 @@
   "private": true,
   "type": "module",
   "workspaces": [
-    "packages/*"
+    "packages/*",
+    "document"
   ],
   "description": "",
   "license": "MIT",
@@ -22,7 +23,7 @@
     "helpdesk-string:test:unit": "yarn workspace @jood/helpdesk-string test:unit",
     "helpdesk-timer:build": "yarn workspace @jood/helpdesk-timer build",
     "helpdesk-timer:test:unit": "yarn workspace @jood/helpdesk-timer test:unit",
-    "docs:build": "yarn workspace document build"
+    "docs:build": "yarn workspace document docs:build"
   },
   "keywords": [],
   "devDependencies": {
