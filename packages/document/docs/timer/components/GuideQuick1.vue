@@ -20,11 +20,11 @@ import { Subscription } from 'rxjs';
 
 export default defineComponent({
   setup() {
+    const serverTime = Date.now();
     const secondTimer = new SecondTimer();
     const minuteTimer = new MinuteTimer();
     const listener = new Subscription();
 
-    const serverTime = Date.now();
     const state = reactive({
       secondDate: null,
       minuteDate: null,
