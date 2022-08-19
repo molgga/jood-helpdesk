@@ -1,0 +1,1 @@
+const a=(e,t)=>{const o=Math.floor((t-e)/1e3),n=Math.floor(o/60),r=Math.floor(n/60),s=Math.floor(r/24);return{second:o,minute:n,hour:r,day:s}},f=e=>!(e===null||typeof e=="boolean"||/\d/.test(e)===!1||isNaN(e)),l=e=>{let t;if(f(e)){const o=Number(e);t=0<=o&&o<10?`0${o}`:e.toString()}else t=e;return t};export{l as a,f as i,a as t};
