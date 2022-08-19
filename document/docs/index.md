@@ -1,4 +1,4 @@
-# jood-helpdesk
+# 개요
 
 ## 목표
 
