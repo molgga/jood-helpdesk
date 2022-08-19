@@ -4,6 +4,10 @@ const IS_BUILD = process.env.BUILD;
 
 const sidebar = [
   {
+    text: 'Introduction',
+    items: [{ text: '개요', link: '/index' }],
+  },
+  {
     text: '@jood/helpdesk-date',
     items: [
       { text: 'toDiffHMS', link: '/date/to-diff-hms' },
@@ -15,15 +19,6 @@ const sidebar = [
     items: [{ text: '시작하기', link: '/timer/getting-started' }],
   },
 ];
-
-(() => {
-  if (!IS_BUILD) {
-    sidebar.push({
-      text: 'vitepress-example',
-      items: [{ text: 'example', link: '/example/index' }],
-    });
-  }
-})();
 
 export default {
   vite: {
@@ -37,7 +32,7 @@ export default {
       },
     },
   },
-  base: IS_BUILD ? '/jood-helpdesk' : '', // https://molgga.github.io/jood-helpdesk/
+  base: IS_BUILD ? '/jood-helpdesk' : '', // https://molgga.github.io/jood-helpdesk/,
   themeConfig: {
     siteTitle: 'jood-helpdesk',
     nav: [
