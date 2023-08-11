@@ -4,6 +4,7 @@
 dist
 dist-tsc
 coverage
+**/.vitepress/cache
 
 # dependencies
 node_modules

@@ -3,7 +3,7 @@ module.exports = {
   verbose: true,
   setupFilesAfterEnv: ['<rootDir>/tests/setup.ts'],
   transform: {
-    '^.+\\.(ts|tsx)$': 'ts-jest',
+    '^.+\\.(ts|tsx)$': ['ts-jest', { isolatedModules: true }],
   },
   transformIgnorePatterns: ['node_modules', '__snapshots__'],
   testMatch: ['**/__tests__/**/(*.)+(spec|test).+(ts|tsx|js)'],
