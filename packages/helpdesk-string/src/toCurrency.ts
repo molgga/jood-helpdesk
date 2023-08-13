@@ -1,4 +1,4 @@
-import { isNumber } from '@jood/helpdesk-core';
+import { isNumber } from '@jood/helpdesk-number';
 
 interface CurrencyOption {
   locale?: string;
