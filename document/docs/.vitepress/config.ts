@@ -26,6 +26,7 @@ export default {
       alias: {
         '@jood/helpdesk-core': path.resolve(__dirname, '../../../packages/helpdesk-core/src'),
         '@jood/helpdesk-date': path.resolve(__dirname, '../../../packages/helpdesk-date/src'),
+        '@jood/helpdesk-number': path.resolve(__dirname, '../../../packages/helpdesk-number/src'),
         '@jood/helpdesk-storage': path.resolve(__dirname, '../../../packages/helpdesk-storage/src'),
         '@jood/helpdesk-string': path.resolve(__dirname, '../../../packages/helpdesk-string/src'),
         '@jood/helpdesk-timer': path.resolve(__dirname, '../../../packages/helpdesk-timer/src'),
