@@ -1,4 +1,4 @@
-import { isNumber } from '@jood/helpdesk-core';
+import { isNumber } from '@jood/helpdesk-number';
 
 /**
  * 가격 포맷 옵션
