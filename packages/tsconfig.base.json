@@ -1,0 +1,31 @@
+{
+  "compilerOptions": {
+    "ignoreDeprecations": "5.0",
+    "target": "esnext",
+    "module": "esnext",
+    "strict": true,
+    "strictNullChecks": false,
+    "skipLibCheck": true,
+    "useDefineForClassFields": false,
+    "jsx": "preserve",
+    "importHelpers": true,
+    "moduleResolution": "node",
+    "experimentalDecorators": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "sourceMap": true,
+    "noImplicitAny": false,
+    "baseUrl": ".",
+    "types": ["jest"],
+    "paths": {
+      "@jood/helpdesk-core": ["./helpdesk-core/src/index"],
+      "@jood/helpdesk-date": ["./helpdesk-date/src/index"],
+      "@jood/helpdesk-number": ["./helpdesk-number/src/index"],
+      "@jood/helpdesk-storage": ["./helpdesk-storage/src/index"],
+      "@jood/helpdesk-string": ["./helpdesk-string/src/index"],
+      "@jood/helpdesk-timer": ["./helpdesk-timer/src/index"]
+    },
+    "lib": ["esnext", "dom", "dom.iterable", "scripthost"]
+  },
+  "exclude": ["node_modules"]
+}
