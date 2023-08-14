@@ -1,6 +1,6 @@
 import { isNumber } from '../isNumber';
 
-describe('utils/number/isNumber', () => {
+describe('helpdesk-number: isNumber', () => {
   test('isNumber', () => {
     expect(isNumber(0)).toBe(true);
     expect(isNumber(1)).toBe(true);

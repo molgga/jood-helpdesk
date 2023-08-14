@@ -1,6 +1,6 @@
 import { toMaskingJustify } from '../toMaskingJustify';
 
-describe('utils/string/toMaskingJustify', () => {
+describe('helpdesk-string: toMaskingJustify', () => {
   test('toMaskingJustify', () => {
     expect(toMaskingJustify('0')).toBe('0');
     expect(toMaskingJustify('01')).toBe('*1');

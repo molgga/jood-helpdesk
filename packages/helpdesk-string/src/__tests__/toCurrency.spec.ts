@@ -1,6 +1,6 @@
 import { toCurrency } from '../toCurrency';
 
-describe('utils/string/toCurrency', () => {
+describe('helpdesk-string: toCurrency', () => {
   test('toCurrency', () => {
     expect(toCurrency(0)).toBe('0');
     expect(toCurrency(1)).toBe('1');

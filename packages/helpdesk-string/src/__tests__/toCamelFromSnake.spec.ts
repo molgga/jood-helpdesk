@@ -1,6 +1,6 @@
 import {toCamelFromSnake } from '../toCamelFromSnake';
 
-describe('utils/string/toCamelFromSnake', () => {
+describe('helpdesk-string: toCamelFromSnake', () => {
   test('toCamelFromSnake', () => {
     expect(toCamelFromSnake('user_name')).toBe('userName');
     expect(toCamelFromSnake('user__name')).toBe('user_Name');

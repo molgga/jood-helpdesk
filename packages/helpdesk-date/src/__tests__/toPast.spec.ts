@@ -1,6 +1,6 @@
 import { toPast } from '../toPast';
 
-describe('toPast', () => {
+describe('helpdesk-date: toPast', () => {
   const now = new Date('2019-03-12 08:10:20').getTime();
 
   test('기본 옵션 테스트', () => {

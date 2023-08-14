@@ -1,6 +1,6 @@
 import { toMaskingFirst } from '../toMaskingFirst';
 
-describe('utils/string/toMaskingFirst', () => {
+describe('helpdesk-string: toMaskingFirst', () => {
   test('toMaskingFirst', () => {
     expect(toMaskingFirst('0')).toBe('0');
     expect(toMaskingFirst('01')).toBe('*1');

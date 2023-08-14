@@ -1,6 +1,6 @@
 import { toCamelFromKebab } from '../toCamelFromKebab';
 
-describe('utils/string/toCamelFromKebab', () => {
+describe('helpdesk-string: toCamelFromKebab', () => {
   test('toCamelFromKebab', () => {
     expect(toCamelFromKebab('user-name')).toBe('userName');
     expect(toCamelFromKebab('user--name')).toBe('user-Name');

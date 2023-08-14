@@ -14,6 +14,7 @@
     "package:build": "yarn run helpdesk-core:build && run-p helpdesk-date:build helpdesk-number:build helpdesk-storage:build helpdesk-string:build helpdesk-timer:build",
     "package:build:clear": "run-p helpdesk-core:build:clear helpdesk-date:build:clear helpdesk-number:build:clear helpdesk-storage:build:clear helpdesk-string:build:clear helpdesk-timer:build:clear",
     "package:test:unit": "run-p helpdesk-core:test:unit helpdesk-date:test:unit helpdesk-number:test:unit helpdesk-storage:test:unit helpdesk-string:test:unit helpdesk-timer:test:unit",
+    "package:test:ci": "run-s package:build:clear package:build package:test:unit",
     "helpdesk-core:build": "yarn workspace @jood/helpdesk-core build",
     "helpdesk-core:build:clear": "yarn workspace @jood/helpdesk-core build:clear",
     "helpdesk-core:test:unit": "yarn workspace @jood/helpdesk-core test:unit",

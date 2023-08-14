@@ -1,6 +1,6 @@
 import { toEllipsisEnd } from '../toEllipsisEnd';
 
-describe('utils/string/toEllipsisEnd', () => {
+describe('helpdesk-string: toEllipsisEnd', () => {
   test('toEllipsisEnd', () => {
     const test1 = 'https://developers.google.com/web/fundamentals/architecture/app-shell';
     const test2 = '0123456789012345678901234567890123456789';

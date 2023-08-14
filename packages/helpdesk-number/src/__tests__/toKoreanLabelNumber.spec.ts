@@ -1,6 +1,6 @@
 import { toKoreanLabelNumber } from '../toKoreanLabelNumber';
 
-describe('utils/number/toKoreanLabelNumber', () => {
+describe('helpdesk-number: toKoreanLabelNumber', () => {
   it('숫자가 한글로 반환되어야 합니다.', () => {
     expect(toKoreanLabelNumber(0)).toBe('');
     expect(toKoreanLabelNumber(123)).toBe('일백이십삼');

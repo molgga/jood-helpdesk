@@ -1,6 +1,6 @@
 import { refineWhitespace } from '../refineWhitespace';
 
-describe('utils/string/refineWhitespace', () => {
+describe('helpdesk-string: refineWhitespace', () => {
   test('refineWhitespace', () => {
     expect(refineWhitespace('\u2800')).toBe(' ');
     expect(refineWhitespace('&#10240;')).toBe(' ');

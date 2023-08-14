@@ -1,6 +1,6 @@
 import { toCurrencyFormat, CurrencyPriceOption } from '../toCurrencyFormat';
 
-describe('utils/string/toCurrencyFormat', () => {
+describe('helpdesk-string: toCurrencyFormat', () => {
   test('toCurrencyFormat', () => {
     expect(toCurrencyFormat(-0.1)).toBe('-0.1');
     expect(toCurrencyFormat(-1.1)).toBe('-1.1');

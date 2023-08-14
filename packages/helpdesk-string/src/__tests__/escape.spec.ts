@@ -1,6 +1,6 @@
 import { escape } from '../escape';
 
-describe('utils/string/escape', () => {
+describe('helpdesk-string: escape', () => {
   test('escape', () => {
     const test1 = `<div>abcd</div>`;
     const test2 = `<div>ab&cd</div>`;

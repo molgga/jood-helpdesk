@@ -1,7 +1,7 @@
 import { ArchiveData } from '../ArchiveData';
 import { MockStorage } from './mock';
 
-describe('ArchiveData', () => {
+describe('helpdesk-storage: ArchiveData', () => {
   let archive: ArchiveData<string>;
   let mockStorage: MockStorage;
 

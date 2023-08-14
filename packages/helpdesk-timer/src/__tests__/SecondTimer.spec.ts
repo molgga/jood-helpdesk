@@ -1,6 +1,6 @@
 import { SecondTimer } from '../SecondTimer';
 
-describe('SecondTimer', () => {
+describe('helpdesk-timer: SecondTimer', () => {
   let timer: SecondTimer;
 
   beforeEach(() => {

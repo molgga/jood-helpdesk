@@ -1,6 +1,6 @@
 import { toFormat } from '../toFormat';
 
-describe('toFormat', () => {
+describe('helpdesk-date: toFormat', () => {
   const testDate = new Date('2019-03-21T14:33:57.000+09:00');
   const timezoneOffset = (testDate.getTimezoneOffset() + 540) * 60 * 1000;
   const at1 = testDate.getTime() + timezoneOffset;

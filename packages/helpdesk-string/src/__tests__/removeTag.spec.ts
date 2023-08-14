@@ -1,6 +1,6 @@
 import { removeTag } from '../removeTag';
 
-describe('utils/string/removeTag', () => {
+describe('helpdesk-string: removeTag', () => {
   test('removeTag', () => {
     /*eslint-disable */ // 줄바꿈 테스트로 lint 제외
 

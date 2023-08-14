@@ -1,6 +1,6 @@
 import { replaceAll } from '../replaceAll';
 
-describe('utils/string/replaceAll', () => {
+describe('helpdesk-string: replaceAll', () => {
   test('replaceAll', () => {
     expect(replaceAll('a-b-c', '-', '@')).toBe('a@b@c');
     expect(replaceAll('a-b-c', '', '@')).toBe('a-b-c');

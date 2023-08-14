@@ -1,6 +1,6 @@
 import { trimEnd } from '../trimEnd';
 
-describe('utils/string/trimEnd', () => {
+describe('helpdesk-string: trimEnd', () => {
   test('trimEnd', () => {
     expect(trimEnd('a ')).toBe('a');
     expect(trimEnd('   a ')).toBe('   a');
