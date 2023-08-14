@@ -1,6 +1,6 @@
 import { toKoreanLabelNumberFormat } from '../toKoreanLabelNumberFormat';
 
-describe('utils/number/toKoreanLabelNumberFormat', () => {
+describe('helpdesk-number: toKoreanLabelNumberFormat', () => {
   it('숫자가 한글 표현으로 반환되어야 합니다.', () => {
     expect(toKoreanLabelNumberFormat(0)).toBe('');
     expect(toKoreanLabelNumberFormat(123)).toBe('123');

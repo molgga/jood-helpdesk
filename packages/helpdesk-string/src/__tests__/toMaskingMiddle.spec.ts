@@ -1,6 +1,6 @@
 import { toMaskingMiddle } from '../toMaskingMiddle';
 
-describe('utils/string/toMaskingMiddle', () => {
+describe('helpdesk-string: toMaskingMiddle', () => {
   test('toMaskingMiddle', () => {
     expect(toMaskingMiddle('0')).toBe('0');
     expect(toMaskingMiddle('01')).toBe('0*');

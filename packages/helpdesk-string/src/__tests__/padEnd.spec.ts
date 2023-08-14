@@ -1,6 +1,6 @@
 import { padEnd } from '../padEnd';
 
-describe('utils/string/padEnd', () => {
+describe('helpdesk-string: padEnd', () => {
   test('padEnd', () => {
     expect(padEnd(1, '0', 2)).toBe('10');
     expect(padEnd('1', '0', 2)).toBe('10');

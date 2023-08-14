@@ -1,6 +1,6 @@
 import { padStart } from '../padStart';
 
-describe('utils/string/padStart', () => {
+describe('helpdesk-string: padStart', () => {
   test('padStart', () => {
     expect(padStart(1, '0', 2)).toBe('01');
     expect(padStart('1', '0', 2)).toBe('01');

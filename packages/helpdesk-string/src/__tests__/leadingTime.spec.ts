@@ -1,6 +1,6 @@
 import { leadingTime } from '../leadingTime';
 
-describe('utils/string/leadingTime', () => {
+describe('helpdesk-string: leadingTime', () => {
   test('leadingTime', () => {
     expect(leadingTime(0)).toBe('00');
     expect(leadingTime(5)).toBe('05');

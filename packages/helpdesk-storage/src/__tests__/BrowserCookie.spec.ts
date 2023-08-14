@@ -2,7 +2,7 @@ import { BrowserCookie } from '../BrowserCookie';
 /**
  * @jest-environment jsdom
  */
-describe('Packages:cookie: BrowserCookie', () => {
+describe('helpdesk-storage: BrowserCookie', () => {
   let cookie: BrowserCookie;
   const TEST_COOKIES = [
     { name: 'a', value: '11' },

@@ -1,6 +1,6 @@
 import { toBeLeft } from '../toBeLeft';
 
-describe('toBeLeft', () => {
+describe('helpdesk-date: toBeLeft', () => {
   it('2시간 전은 7200초 전이어야 합니다.', () => {
     expect(
       toBeLeft(new Date('2022-07-25 9:00:00').getTime(), new Date('2022-07-25 11:00:00').getTime())

@@ -1,6 +1,6 @@
 import { toMaskingLast } from '../toMaskingLast';
 
-describe('utils/string/toMaskingLast', () => {
+describe('helpdesk-string: toMaskingLast', () => {
   test('toMaskingLast', () => {
     expect(toMaskingLast('0')).toBe('0');
     expect(toMaskingLast('01')).toBe('0*');

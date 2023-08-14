@@ -1,6 +1,6 @@
 import { toDiffHMS } from '../toDiffHMS';
 
-describe('toDiffHMS', () => {
+describe('helpdesk-date: toDiffHMS', () => {
   it('두 시간 사이의 남은 시간을 반환해야 합니다.', () => {
     expect(
       toDiffHMS(

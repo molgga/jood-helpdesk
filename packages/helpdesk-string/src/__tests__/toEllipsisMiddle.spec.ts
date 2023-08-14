@@ -1,6 +1,6 @@
 import { toEllipsisMiddle } from '../toEllipsisMiddle';
 
-describe('utils/string/toEllipsisMiddle', () => {
+describe('helpdesk-string: toEllipsisMiddle', () => {
   test('toEllipsisMiddle', () => {
     const test1 = 'https://developers.google.com/web/fundamentals/architecture/app-shell';
     const test2 = '0123456789012345678901234567890123456789';

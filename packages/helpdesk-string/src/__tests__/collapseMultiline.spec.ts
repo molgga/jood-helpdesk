@@ -1,6 +1,6 @@
 import { collapseMultiline } from '../collapseMultiline';
 
-describe('utils/string/collapseMultiline', () => {
+describe('helpdesk-string: collapseMultiline', () => {
   test('collapseMultiline', () => {
     /*eslint-disable */
     expect(

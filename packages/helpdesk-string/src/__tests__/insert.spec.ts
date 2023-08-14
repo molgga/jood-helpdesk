@@ -1,6 +1,6 @@
 import { insert } from '../insert';
 
-describe('utils/string/insert', () => {
+describe('helpdesk-string: insert', () => {
   test('insert', () => {
     expect(insert('abcde', 1, '@')).toBe('a@bcde');
     expect(insert('abcde', 5, '@')).toBe('abcde@');

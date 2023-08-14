@@ -1,6 +1,6 @@
 import { refineSafeHtmlText } from '../refineSafeHtmlText';
 
-describe('utils/string/refineSafeHtmlText', () => {
+describe('helpdesk-string: refineSafeHtmlText', () => {
   test('refineSafeHtmlText', () => {
     const test1 = `&lt;div&gt;1&lt;/div&gt;`;
     const test2 = `&lt;div&gt;1&lt;span&gt;2&lt;/span&gt;&lt;/div&gt;`;
