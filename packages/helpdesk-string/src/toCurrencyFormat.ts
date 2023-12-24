@@ -4,7 +4,7 @@ import { isNumber } from '@jood/helpdesk-number';
  * 가격 포맷 옵션
  * @interface CurrencyPriceOption
  * @property fixed? {number} 소숫점 까지 표시되어야 하는 경우 지정된 숫자만큼 표시. (예: fixed = 1 -> 99.0, fixed = 2 -> 99.00)
- * @property replaceChar? {string} 가격 표시 중간에 들어가 대치 문자
+ * @property replaceChar? {string} 가격 표시 중간에 들어갈 대치 문자
  */
 export interface CurrencyPriceOption {
   fixed?: number;

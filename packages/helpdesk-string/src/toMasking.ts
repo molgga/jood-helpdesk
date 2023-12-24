@@ -9,7 +9,6 @@ export type MaskingDirection = 'start' | 'middle' | 'end' | 'justify';
 export interface MaskingOption {
   mask?: string;
   direction?: MaskingDirection;
-  overflowMax?: number;
 }
 
 /**
@@ -33,13 +32,13 @@ export interface MaskingOption {
  */
 export const toMasking = (str: string, options: MaskingOption = {}): string => {
   if (!str) return str;
-  const { mask = '*', direction = 'end', overflowMax } = options;
+  const { mask = '*', direction = 'end' } = options;
   const minOverflow = 2;
   const strLen = str.length;
   let refine: string;
   if (minOverflow < strLen) {
-    let overflowNum;
-    let replaceReg;
+    let overflowNum: number;
+    let replaceReg: RegExp;
     let justM: number;
     let justS: number;
     let justE: number;
@@ -67,9 +66,6 @@ export const toMasking = (str: string, options: MaskingOption = {}): string => {
         break;
       default:
         overflowNum = Math.floor(strLen / 2);
-        if (overflowMax && overflowMax < overflowNum) {
-          overflowNum = overflowMax;
-        }
         replaceReg = new RegExp(`^(.{${overflowNum}})(.+)$`, 'g');
         refine = str.replace(replaceReg, (full, m1, m2) => {
           return `${m1}${m2.replace(/./g, mask)}`;

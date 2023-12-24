@@ -11,7 +11,7 @@ import { isNumber } from '@jood/helpdesk-number';
 export const insert = (text: string, index: number, addText: string) => {
   let head = null;
   let tail = null;
-  let refine;
+  let refine: string;
   if (isNumber(index)) {
     const textLen = text.length;
     const safeIndex = index < 0 ? 0 : Math.min(index, textLen);
