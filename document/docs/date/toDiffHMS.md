@@ -1,28 +1,25 @@
-<script setup>
-import ToDiffHMS from './components/ToDiffHMS.vue'
-</script>
+# toDiffHMS
 
-# toDiffHMS - 두개의 시간 차이
+fromAt 이 toAt 까지 얼마나 남았는지 반환합니다.
+일자의 차이는 +24시간 으로 계산한다.
 
-💡 `09시 12분 22초 남았습니다`, `이제 곧 종료 됩니다`
-
-```typescript{2}
-toDiffHMS(대상시간, 비교시간);
-toDiffHMS(Date.now(), 1660295996286); // { hour: 11, minute: 2, second: 33 }
+```ts
+toDiffHMS(fromAt, toAt);
 ```
 
-## 예제
+```ts
+toDiffHMS(
+    new Date('2023-12-25 07:32:33').getTime(),
+    new Date('2023-12-25 23:59:59').getTime()
+); // { hour: 16, minute: 27, second: 26 }
 
-<ToDiffHMS />
+toDiffHMS(
+  new Date('2023-12-25 21:59:33').getTime(),
+  new Date('2023-12-25 23:59:59').getTime()
+); // { hour: 2, minute: 0, second: 26 }
 
-아래 코드는 위 예제의 일부 입니다. 버튼을 클릭해서 `execute` 를 실행해 보세요.
-
-```typescript
-const midnight = new Date();
-midnight.setHours(24, 0, 0, 0);
-
-const execute = () => {
-  const { hour, minute, second } = toDiffHMS(Date.now(), midnight.getTime());
-  // ...
-};
+toDiffHMS(
+  new Date('2023-12-25 21:59:39').getTime(),
+  new Date('2023-12-26 23:59:59').getTime()
+); // { hour: 26, minute: 0, second: 20 }
 ```

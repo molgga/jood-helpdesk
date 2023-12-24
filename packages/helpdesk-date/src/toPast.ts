@@ -3,7 +3,7 @@ import { toBeLeft } from './toBeLeft';
 import { toFormat } from './toFormat';
 
 /**
- * pastAt 이 fromAt 으로 부터 지나간 시간을 지정된 옵션에 따라 반환.
+ * pastAt 이 fromAt 으로 부터 지나간 시간을 지정된 옵션에 따라 반환합니다.
  * @param fromAt 기준 시간
  * @param pastAt 비교할 시간
  * @param options 옵션
@@ -16,11 +16,7 @@ import { toFormat } from './toFormat';
  * console.log(toPast(now, new Date("2019-03-10 08:10:20").getTime())); // '2일 전'
  * console.log(toPast(now, new Date("2019-02-10 08:10:19").getTime(), { format: "YYYY년 MM월 DD일"})); // "2019년 02월 10일"
  */
-export const toPast = (
-  fromAt: number | string,
-  pastAt: number | string,
-  options: DatePastOption = {}
-): string => {
+export const toPast = (fromAt: number | string, pastAt: number | string, options: DatePastOption = {}): string => {
   const {
     justMax = 60,
     minuteMax = 3600,
@@ -37,10 +33,8 @@ export const toPast = (
   if (!pastAt || !fromAt) {
     return alternative;
   }
-  const atFrom: number =
-    fromAt && fromAt.constructor === String ? new Date(fromAt).getTime() : (fromAt as number);
-  const atPast: number =
-    pastAt && pastAt.constructor === String ? new Date(pastAt).getTime() : (pastAt as number);
+  const atFrom: number = fromAt && fromAt.constructor === String ? new Date(fromAt).getTime() : (fromAt as number);
+  const atPast: number = pastAt && pastAt.constructor === String ? new Date(pastAt).getTime() : (pastAt as number);
   if (!overThenJust && atFrom <= atPast) {
     return alternative;
   }

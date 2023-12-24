@@ -3,7 +3,7 @@ import { DateFormatOption } from './types';
 import { toLeadingTime } from './toLeadingTime';
 
 /**
- * 지정된 시간을 지정된 옵션의 포맷으로 변경
+ * 지정된 시간을 지정된 옵션의 포맷으로 변경합니다.
  * @param at 시간
  * @param options 옵션
  * @example

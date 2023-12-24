@@ -10,8 +10,29 @@ const sidebar = [
   {
     text: '@jood/helpdesk-date',
     items: [
+      { text: 'toBeLeft', link: '/date/toBeLeft' },
+      { text: 'toFormat', link: '/date/toFormat' },
+      { text: 'toLeadingTime', link: '/date/toLeadingTime' },
       { text: 'toDiffHMS', link: '/date/toDiffHMS' },
+      { text: 'toDiffHMS 심화', link: '/date/toDiffHMS__2' },
       { text: 'toPast', link: '/date/toPast' },
+      { text: 'toPast 심화', link: '/date/toPast__2' },
+      { text: 'toTimezoneOffsetAt', link: '/date/toTimezoneOffsetAt' },
+    ],
+  },
+  {
+    text: '@jood/helpdesk-timer',
+    items: [{ text: 'Timer 시작하기', link: '/timer/getting-started' }],
+  },
+  {
+    text: '@jood/helpdesk-number',
+    items: [
+      { text: 'getRandomizer', link: '/number/getRandomizer' },
+      { text: 'isNumber', link: '/number/isNumber' },
+      { text: 'randomRangeFloat', link: '/number/randomRangeFloat' },
+      { text: 'randomRangeInt', link: '/number/randomRangeInt' },
+      { text: 'toKoreanLabelNumber', link: '/number/toKoreanLabelNumber' },
+      { text: 'toKoreanLabelNumberFormat', link: '/number/toKoreanLabelNumberFormat' },
     ],
   },
   {
@@ -42,10 +63,6 @@ const sidebar = [
       { text: 'trimEnd', link: '/string/trimEnd' },
       { text: 'trimStart', link: '/string/trimStart' },
     ],
-  },
-  {
-    text: '@jood/helpdesk-timer',
-    items: [{ text: 'Timer 시작하기', link: '/timer/getting-started' }],
   },
 ];
 

@@ -1,8 +1,8 @@
 import { toBeLeft } from './toBeLeft';
 
 /**
- * fromAt 이 toAt 까지 얼마나 남았는지 반환한다.
- * 일자의 차이는 +24시간 으로 계산한다.
+ * fromAt 이 toAt 까지 얼마나 남았는지 반환합니다.
+ * 일자의 차이는 +24시간 으로 계산합니다.
  * @param fromAt 이 시간 부터
  * @param toAt 이 시간 까지
  * @example

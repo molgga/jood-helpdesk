@@ -1,5 +1,5 @@
 interface Options {
-  labelType?: 'korean' | 'number' | '';
+  labelType?: 'korean' | 'number';
 }
 
 const UNIT_SPLIT1 = ['', '십', '백', '천'];
