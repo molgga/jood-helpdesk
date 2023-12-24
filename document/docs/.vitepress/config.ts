@@ -22,7 +22,11 @@ const sidebar = [
   },
   {
     text: '@jood/helpdesk-timer',
-    items: [{ text: 'Timer 시작하기', link: '/timer/getting-started' }],
+    items: [
+      { text: 'SecondTimer', link: '/timer/SecondTimer' },
+      { text: 'MinuteTimer', link: '/timer/MinuteTimer' },
+      { text: 'Timer 심화', link: '/timer/Timer__advance' },
+    ],
   },
   {
     text: '@jood/helpdesk-number',
