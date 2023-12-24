@@ -5,7 +5,7 @@
 ```ts
 toKoreanLabelNumberFormat(소스, {
   [unitSpace = true]: 단위별 띄어쓰기 여부
-})
+});
 ```
 
 ```ts

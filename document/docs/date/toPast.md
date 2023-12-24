@@ -15,7 +15,7 @@ toPast(fromAt, pastAt, {
   [format = 'YYYY-MM-DD hh:mm:ss']: dayMax 도 넘어가는 시간인 경우 표시될 날짜 포맷
   [alternative = 'Unknown']: invalid 할 때 대체 문자
   [overThenJust = true]: 시간이 지나지 않은 경우 '방금 전' 으로 표기할지 여부
-})
+});
 ```
 
 ```ts

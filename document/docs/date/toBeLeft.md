@@ -3,7 +3,7 @@
 fromAt, toAt 두 시간의 차이를 각 시간 단위(초, 분, 시간, 일)로 반환합니다.
 
 ```ts
-toBeLeft(fromAt, toAt)
+toBeLeft(fromAt, toAt);
 ```
 
 ```ts

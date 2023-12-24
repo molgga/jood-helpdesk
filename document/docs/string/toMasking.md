@@ -3,13 +3,10 @@
 문자열에 마스킹 처리를 합니다.
 
 ```ts
-toMasking(
-  소스 문자열,
-  {
-    [mask = '*']: 마스킹 문자열
-    [direction = 'end']: 마스킹 처리 부분 // 'start'(앞) | 'middle'(중간) | 'end'(끝) | 'justify'(양쪽)
-  }
-)
+toMasking(소스 문자열,{
+  [mask = '*']: 마스킹 문자열
+  [direction = 'end']: 마스킹 처리 부분 // 'start'(앞) | 'middle'(중간) | 'end'(끝) | 'justify'(양쪽)
+});
 ```
 
 ```ts

@@ -57,6 +57,7 @@ const sidebar = [
       { text: 'toCurrency', link: '/string/toCurrency' },
       { text: 'toCurrencyFormat', link: '/string/toCurrencyFormat' },
       { text: 'toEllipsisEnd', link: '/string/toEllipsisEnd' },
+      { text: 'toEllipsisMiddle', link: '/string/toEllipsisMiddle' },
       { text: 'toMasking', link: '/string/toMasking' },
       { text: 'toMaskingFirst', link: '/string/toMaskingFirst' },
       { text: 'toMaskingJustify', link: '/string/toMaskingJustify' },

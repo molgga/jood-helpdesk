@@ -4,8 +4,8 @@
 
 ```ts
 toKoreanLabelNumber(소스, {
-  [labelType = 'korean']: 숫자 표기 방식 // 'korean'(한국어) | 'number'(숫자)
-})
+  [labelType = 'korean']: 숫자 표기 방식 // 'korean'(한글) | 'number'(숫자)
+});
 ```
 
 ```ts

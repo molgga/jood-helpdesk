@@ -7,7 +7,7 @@ toMasking 보다 조금 더 세밀한 옵션을 제공합니다.
 toMaskingMiddle(소스 문자열, {
   [mask = '*']: 마스킹 문자열
   [maxShow: number]: 마스킹 되지 않는 최대 문자수
-})
+});
 ```
 
 ```ts
