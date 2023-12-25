@@ -9,12 +9,8 @@
  *   { id: 1, name: "google" },
  *   { id: 3, name: "amazone" }
  * ];
- * const idFilter = item => {
- *   return item.id;
- * };
- * const nameFilter = item => {
- *   return item.name;
- * };
+ * const idFilter = (item) => item.id;
+ * const nameFilter = (item) => item.name;
  * console.log(arr1.filter(uniqueFilter(idFilter))); // [{ id: 1, name: "google" },{ id: 2, name: "microsoft" },{ id: 3, name: "amazone" } ]
  * console.log(arr1.filter(uniqueFilter(nameFilter))); // [{ id: 1, name: "google" },{ id: 2, name: "microsoft" },{ id: 3, name: "amazone" } ]
  */

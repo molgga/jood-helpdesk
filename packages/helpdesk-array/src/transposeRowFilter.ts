@@ -22,12 +22,26 @@ interface TransposeRowFilterParams<T> {
  *     columnIndex,
  *   };
  * });
- * console.log(rows); // [[{"id":1,"name":"A","myValue1":"a","rowIndex":0,"columnIndex":0},{"id":2,"name":"B","myValue1":"b","rowIndex":0,"columnIndex":1},{"id":3,"name":"C","myValue1":"c","rowIndex":0,"columnIndex":2}],[{"id":1,"name":"A","myValue1":"a","rowIndex":1,"columnIndex":0},{"id":2,"name":"B","myValue1":"b","rowIndex":1,"columnIndex":1},{"id":3,"name":"C","myValue1":"c","rowIndex":1,"columnIndex":2}],[{"id":1,"name":"A","myValue1":"a","rowIndex":2,"columnIndex":0},{"id":2,"name":"B","myValue1":"b","rowIndex":2,"columnIndex":1},{"id":3,"name":"C","myValue1":"c","rowIndex":2,"columnIndex":2}]];
+ * console.log(rows);
+ * // [
+ * //   [
+ * //     {"id":1,"name":"A","myValue1":"a","rowIndex":0,"columnIndex":0},
+ * //     {"id":2,"name":"B","myValue1":"b","rowIndex":0,"columnIndex":1},
+ * //     {"id":3,"name":"C","myValue1":"c","rowIndex":0,"columnIndex":2}
+ * //   ],
+ * //   [
+ * //     {"id":1,"name":"A","myValue1":"a","rowIndex":1,"columnIndex":0},
+ * //     {"id":2,"name":"B","myValue1":"b","rowIndex":1,"columnIndex":1},
+ * //     {"id":3,"name":"C","myValue1":"c","rowIndex":1,"columnIndex":2}
+ * //   ],
+ * //   [
+ * //     {"id":1,"name":"A","myValue1":"a","rowIndex":2,"columnIndex":0},
+ * //     {"id":2,"name":"B","myValue1":"b","rowIndex":2,"columnIndex":1},
+ * //     {"id":3,"name":"C","myValue1":"c","rowIndex":2,"columnIndex":2}
+ * //   ]
+ * // ];
  */
-export function transposeRowFilter<T, C>(
-  ref: T[],
-  filter: (params: TransposeRowFilterParams<T>) => C
-): C[][] {
+export function transposeRowFilter<T, C>(ref: T[], filter: (params: TransposeRowFilterParams<T>) => C): C[][] {
   const refLen = ref.length;
   const newRow: C[][] = Array(refLen);
   for (let r = 0; r < refLen; r++) {

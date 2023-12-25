@@ -5,18 +5,19 @@
  * @param value 검사할 값
  * @param [or=null] 검사할 값이 유효한 값에 포함되지 않을 경우 대체 값
  * @example
- * console.log(availableOr(available1, 10, 10)); // 10
- * console.log(availableOr(available1, 20, 10)); // 20
- * console.log(availableOr(available1, 30, 10)); // 30
- * console.log(availableOr(available1, 30, null)); // 30
- * console.log(availableOr(available1, 111, 10)); // 10
- * console.log(availableOr(available1, 222, 10)); // 10
- * console.log(availableOr(available1, 333, 10)); // 10
- * console.log(availableOr(available1, 444, null)); // null
+ * const codes = [10, 20, 30];
+ * console.log(availableOr(codes, 10, 10)); // 10
+ * console.log(availableOr(codes, 20, 10)); // 20
+ * console.log(availableOr(codes, 30, 10)); // 30
+ * console.log(availableOr(codes, 30, null)); // 30
+ * console.log(availableOr(codes, 111, 10)); // 10
+ * console.log(availableOr(codes, 222, 10)); // 10
+ * console.log(availableOr(codes, 333, 10)); // 10
+ * console.log(availableOr(codes, 444, null)); // null
  */
-export function availableOr<T>(available: ArrayLike<T> = [], value: any, or = null): T {
-  if (!available.length) return or;
-  const index = (available as any[]).findIndex((compare: any) => {
+export function availableOr<T>(availables: ArrayLike<T> = [], value: any, or = null): T {
+  if (!availables.length) return or;
+  const index = (availables as any[]).findIndex((compare: any) => {
     return compare === value;
   });
   return -1 < index ? value : or;
