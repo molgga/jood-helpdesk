@@ -14,6 +14,7 @@ const sidebar = [
       { text: 'toAtByYyyymmdd', link: '/date/toAtByYyyymmdd' },
       { text: 'toBeLeft', link: '/date/toBeLeft' },
       { text: 'toFormat', link: '/date/toFormat' },
+      { text: 'toFormat 심화', link: '/date/toFormat__2' },
       { text: 'toLeadingTime', link: '/date/toLeadingTime' },
       { text: 'toDiffHMS', link: '/date/toDiffHMS' },
       { text: 'toDiffHMS 심화', link: '/date/toDiffHMS__2' },
