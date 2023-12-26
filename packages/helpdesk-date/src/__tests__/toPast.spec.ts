@@ -11,7 +11,7 @@ describe('helpdesk-date: toPast', () => {
     expect(toPast(now, new Date('2023-03-10T08:10:20').getTime())).toBe('2일 전');
     expect(
       toPast(now, new Date('2023-02-10T08:10:19').getTime(), { format: 'YYYY년 MM월 DD일' })
-    ).toBe('2019년 02월 10일');
+    ).toBe('2023년 02월 10일');
   });
 
   test('옵션 지정시 값 테스트', () => {
@@ -95,7 +95,7 @@ describe('helpdesk-date: toPast', () => {
     expect(toPast(now, new Date('2023-03-10T08:10:20').getTime(), options)).toBe('2일 전');
     expect(toPast(now, new Date('2023-03-09T08:10:20').getTime(), options)).toBe('3일 전');
     expect(toPast(now, new Date('2023-03-09T08:10:19').getTime(), options)).toBe(
-      '2019년 03월 09일'
+      '2023년 03월 09일'
     );
   });
 });
