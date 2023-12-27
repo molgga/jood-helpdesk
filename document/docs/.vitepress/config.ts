@@ -83,6 +83,14 @@ const sidebar = [
       { text: 'sizeToCover', link: '/point/sizeToCover' },
     ],
   },
+  {
+    text: '@jood/helpdesk-functional',
+    items: [
+      { text: 'debounce', link: '/functional/debounce' },
+      { text: 'throttle', link: '/functional/throttle' },
+      { text: 'delay', link: '/functional/delay' },
+    ],
+  },
 ];
 
 export default {
