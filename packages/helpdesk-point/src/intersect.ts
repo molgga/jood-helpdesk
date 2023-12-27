@@ -7,7 +7,7 @@ import type { IntersectRange } from './types';
  * @param {IntersectRange} other
  * @returns {IntersectRange}
  * @example
- * intersect({ start: 0, end: 100 }, { start: 20, end: 120 }); // { start: 20,end: 100 }
+ * intersect({ start: 0, end: 100 }, { start: 20, end: 120 }); // { start: 20, end: 100 }
  * intersect({ start: 120, end: 200 }, { start: 20, end: 120 }); // { start: 0, end: 0 }
  */
 export function intersect(one: IntersectRange, other: IntersectRange): IntersectRange {

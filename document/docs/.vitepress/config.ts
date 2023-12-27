@@ -73,6 +73,16 @@ const sidebar = [
       { text: 'trimStart', link: '/string/trimStart' },
     ],
   },
+  {
+    text: '@jood/helpdesk-point',
+    items: [
+      { text: 'intersect', link: '/point/intersect' },
+      { text: 'isCollision', link: '/point/isCollision' },
+      { text: 'isIntersect', link: '/point/isIntersect' },
+      { text: 'sizeToContain', link: '/point/sizeToContain' },
+      { text: 'sizeToCover', link: '/point/sizeToCover' },
+    ],
+  },
 ];
 
 export default {

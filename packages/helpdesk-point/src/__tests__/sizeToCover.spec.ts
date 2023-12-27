@@ -1,6 +1,6 @@
 import { sizeToCover } from '../sizeToCover';
 
-describe('utils/point/sizeToCover', () => {
+describe('helpdesk-point: sizeToCover', () => {
   test('sizeToCover', () => {
     // console.log(sizeToCover(100, 100, 200, 200));
     // console.log(sizeToCover(200, 100, 200, 200));

@@ -1,6 +1,6 @@
 import { intersect } from '../intersect';
 
-describe('utils/point/intersect', () => {
+describe('helpdesk-point: intersect', () => {
   test('intersect', () => {
     expect(intersect({ start: 0, end: 100 }, { start: 20, end: 120 })).toEqual({
       start: 20,

@@ -1,6 +1,6 @@
 import { sizeToContain } from '../sizeToContain';
 
-describe('utils/point/sizeToContain', () => {
+describe('helpdesk-point: sizeToContain', () => {
   test('sizeToContain', () => {
     // console.log(sizeToContain(100, 100, 200, 200));
     // console.log(sizeToContain(200, 100, 200, 200));

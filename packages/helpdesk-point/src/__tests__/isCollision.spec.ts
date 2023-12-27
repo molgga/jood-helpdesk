@@ -1,6 +1,6 @@
 import { isCollision } from '../isCollision';
 
-describe('utils/point/isCollision', () => {
+describe('helpdesk-point: isCollision', () => {
   test("isCollision", () => {
     let one = { x: 0, y: 0, w: 100, h: 100 };
     let two = { x: 50, y: 50, w: 100, h: 100 };
