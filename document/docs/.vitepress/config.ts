@@ -103,6 +103,36 @@ export default {
     resolve: {
       alias: [
         {
+          find: '@jood/helpdesk-array',
+          replacement: fileURLToPath(new URL('../../../packages/helpdesk-array/src', import.meta.url)),
+        },
+        {
+          find: '@jood/helpdesk-core',
+          replacement: fileURLToPath(new URL('../../../packages/helpdesk-core/src', import.meta.url)),
+        },
+        {
+          find: '@jood/helpdesk-date',
+          replacement: fileURLToPath(new URL('../../../packages/helpdesk-date/src', import.meta.url)),
+        },
+        {
+          find: '@jood/helpdesk-functional',
+          replacement: fileURLToPath(new URL('../../../packages/helpdesk-functional/src', import.meta.url)),
+        },
+        {
+          find: '@jood/helpdesk-number',
+          replacement: fileURLToPath(new URL('../../../packages/helpdesk-number/src', import.meta.url)),
+        },
+        {
+          find: '@jood/helpdesk-point',
+          replacement: fileURLToPath(new URL('../../../packages/helpdesk-point/src', import.meta.url)),
+        },
+        {
+          find: '@jood/helpdesk-string',
+          replacement: fileURLToPath(new URL('../../../packages/helpdesk-string/src', import.meta.url)),
+        },
+
+        // sub 모듈
+        {
           find: '@jood/helpdesk-module/',
           replacement: fileURLToPath(new URL('../../../packages/helpdesk-module/src/', import.meta.url)),
         },
