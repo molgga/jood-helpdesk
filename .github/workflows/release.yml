@@ -21,7 +21,7 @@ jobs:
         run: |
           yarn run package:deploy:ready
           yarn run package:build
-          yarn run package:docs
+          yarn run docs:build
 
       - name: Test packages
         run: yarn run package:deploy:test
@@ -60,7 +60,7 @@ jobs:
       - name: Build document
         run: |
           yarn run package:deploy:ready
-          yarn run package:docs
+          yarn run docs:build
 
       - name: Github pages publish
         uses: peaceiris/actions-gh-pages@v3
