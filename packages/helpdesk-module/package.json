@@ -1,6 +1,6 @@
 {
   "name": "@jood/helpdesk-module",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "exports": {
     "./ttl-cache": {
       "require": "./dist/ttl-cache/index.js",
