@@ -5,10 +5,10 @@
   "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
   "exports": {
-    "./ttl-cash": {
-      "default": "./dist/ttl-cash/index.js",
-      "module": "./dist/ttl-cash/index.mjs",
-      "types": "./dist/ttl-cash/index.d.ts"
+    "./ttl-cache": {
+      "default": "./dist/ttl-cache/index.js",
+      "module": "./dist/ttl-cache/index.mjs",
+      "types": "./dist/ttl-cache/index.d.ts"
     },
     "./browser-scroll": {
       "default": "./dist/browser-scroll/index.js",
