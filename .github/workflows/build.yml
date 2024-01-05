@@ -19,11 +19,11 @@ jobs:
       - name: Install dependencies
         run: yarn run bootstrap:install
 
-      - name: Test packages
-        run: yarn run package:unit
-
       - name: Build packages
         run: yarn run package:build
+
+      - name: Test packages
+        run: yarn run package:unit
 
       - name: Build document
         run: yarn run docs:build

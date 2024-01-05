@@ -17,13 +17,13 @@ jobs:
           node-version: 18
           registry-url: https://registry.npmjs.org/
 
-      - name: Test packages
+      - name: Build packages & docs
         run: |
           yarn run package:deploy:ready
-          yarn run package:deploy:test
+          yarn run package:deploy:build
 
-      - name: Build packages & docs
-        run: yarn run package:deploy:build
+      - name: Test packages
+        run: yarn run package:deploy:test
 
       - name: NPM publish core
         run: |
