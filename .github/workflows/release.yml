@@ -64,16 +64,56 @@ jobs:
           yarn run package:deploy:ready
           yarn run package:build
 
-      - name: NPM publish
-        run: |
-          npm publish ./packages/helpdesk-array
-          npm publish ./packages/helpdesk-core
-          npm publish ./packages/helpdesk-date
-          npm publish ./packages/helpdesk-functional
-          npm publish ./packages/helpdesk-number
-          npm publish ./packages/helpdesk-point
-          npm publish ./packages/helpdesk-storage
-          npm publish ./packages/helpdesk-string
-          npm publish ./packages/helpdesk-timer
+      - name: NPM publish array
+        if: always()
+        run: npm publish ./packages/helpdesk-array
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
+
+      - name: NPM publish core
+        if: always()
+        run: npm publish ./packages/helpdesk-core
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
+
+      - name: NPM publish date
+        if: always()
+        run: npm publish ./packages/helpdesk-date
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
+
+      - name: NPM publish functional
+        if: always()
+        run: npm publish ./packages/helpdesk-functional
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
+
+      - name: NPM publish number
+        if: always()
+        run: npm publish ./packages/helpdesk-number
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
+
+      - name: NPM publish point
+        if: always()
+        run: npm publish ./packages/helpdesk-point
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
+
+      - name: NPM publish storage
+        if: always()
+        run: npm publish ./packages/helpdesk-storage
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
+
+      - name: NPM publish string
+        if: always()
+        run: npm publish ./packages/helpdesk-string
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
+
+      - name: NPM publish timer
+        if: always()
+        run: npm publish ./packages/helpdesk-timer
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
