@@ -8,7 +8,8 @@ export class CacheValue<T = any> {
   private _key: string;
   private _value: T;
   private _expireAt: number;
-  private _expireNotfyTimer: any;
+  private _expireNotifyTimer: any;
+  private _expireNotifyDelay = 900;
   /**
    * 캐시 값
    * @readonly
@@ -45,20 +46,31 @@ export class CacheValue<T = any> {
     this._expireAt = at;
   }
   /**
+   * 파기 여유 시간
+   * @param {number} at
+   */
+  setExpireNotifyDeplay(delay: number) {
+    this._expireNotifyDelay = delay;
+  }
+  /**
    * 지정된 expire 시간 만큼 대기 후 fnCallback 을 트리거
    * @param {number} expire
    * @param {Function} fnCallback
    */
-  setExpireNotify(expire: number, fnCallback: Function) {
-    clearTimeout(this._expireNotfyTimer);
-    this._expireNotfyTimer = setTimeout(() => {
+  setExpireNotify(expire: number, fnCallback: (key: string) => void) {
+    clearTimeout(this._expireNotifyTimer);
+    this._expireNotifyTimer = setTimeout(() => {
       fnCallback(this._key);
-    }, expire + 1);
+    }, expire + this._expireNotifyDelay);
   }
   /**
    * 파기
    */
   destroy() {
-    clearTimeout(this._expireNotfyTimer);
+    try {
+      clearTimeout(this._expireNotifyTimer);
+    } catch (err) {
+      console.error(err);
+    }
   }
 }

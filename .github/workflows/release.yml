@@ -88,6 +88,12 @@ jobs:
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
 
+      - name: NPM publish module
+        if: always()
+        run: npm publish ./packages/helpdesk-module
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
+
       - name: NPM publish number
         if: always()
         run: npm publish ./packages/helpdesk-number
@@ -100,20 +106,9 @@ jobs:
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
 
-      - name: NPM publish storage
-        if: always()
-        run: npm publish ./packages/helpdesk-storage
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
-
       - name: NPM publish string
         if: always()
         run: npm publish ./packages/helpdesk-string
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
 
-      - name: NPM publish timer
-        if: always()
-        run: npm publish ./packages/helpdesk-timer
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}

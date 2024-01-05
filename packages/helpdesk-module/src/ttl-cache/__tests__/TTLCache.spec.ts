@@ -1,73 +1,87 @@
 import { TTLCache } from "../TTLCache";
 
-function delay(duration: number) {
-  return new Promise((resolve) => {
-    setTimeout(() => resolve(true), duration);
-  });
-}
-
 describe("TTLCache", () => {
   let ttlCache: TTLCache;
-
   beforeEach(() => {
+    jest.useFakeTimers();
     ttlCache = new TTLCache();
+    ttlCache.expireNotifyDeplay =  0;
   });
   afterEach(() => {
+    jest.useRealTimers();
     ttlCache.destroy();
   });
 
-  it("expired", async () => {
+  it("expired 는 expire 시간이 0 으로 지정한 값은 true 가 반환되어야 합니다.", () => {
+    ttlCache.set("A", "myValue1", 0);
+    expect(ttlCache.expired("A")).toBe(true);
+  });
+
+  it("expired 는 지정되지 않은 key 인 경우 true 를 반환해야 합니다.", () => {
+    expect(ttlCache.expired("unknown-k1")).toBe(true);
+    expect(ttlCache.expired("unknown-k2")).toBe(true);
+  });
+
+  it("expired 는 expire 시간이 지나지 않은 key 는 false, 지난값은 true 를 반환해야 합니다.", () => {
     ttlCache.set("A", "myValue1", 0);
     ttlCache.set("B", "myValue2", 100);
     ttlCache.set("C", "myValue3", 200);
-    expect(ttlCache.expired("unknown-k1")).toBe(true);
-    expect(ttlCache.expired("unknown-k2")).toBe(true);
     expect(ttlCache.expired("A")).toBe(true);
     expect(ttlCache.expired("B")).toBe(false);
     expect(ttlCache.expired("C")).toBe(false);
-    await delay(101);
-    expect(ttlCache.expired("unknown-k1")).toBe(true);
-    expect(ttlCache.expired("unknown-k2")).toBe(true);
+    jest.advanceTimersByTime(150);
     expect(ttlCache.expired("A")).toBe(true);
     expect(ttlCache.expired("B")).toBe(true);
     expect(ttlCache.expired("C")).toBe(false);
   });
 
-  it("get", async () => {
+  it("get 은 expire 시간이 0 으로 지정한 값은 undefined 가 반환되어야 합니다.", () => {
+    ttlCache.set("A", "myValue1", 0);
+    expect(ttlCache.get("A")).toBe(undefined);
+  });
+
+  it("get 은 지정되지 않은 key 인 경우 undefined 를 반환해야 합니다.", () => {
+    expect(ttlCache.get("unknown-k1")).toBe(undefined);
+    expect(ttlCache.get("unknown-k2")).toBe(undefined);
+  });
+
+  it("get 은 expire 시간이 지나지 않은 key 는 저장한 값을, 지난값은 false 를 반환해야 합니다.", () => {
     ttlCache.set("A", "myValue1", 0);
     ttlCache.set("B", "myValue2", 100);
     ttlCache.set("C", "myValue3", 200);
-    expect(ttlCache.get("unknown-k1")).toBe(undefined);
-    expect(ttlCache.get("unknown-k2")).toBe(undefined);
     expect(ttlCache.get("A")).toBe(undefined);
     expect(ttlCache.get("B")).toBe("myValue2");
     expect(ttlCache.get("C")).toBe("myValue3");
-    await delay(101);
-    expect(ttlCache.get("unknown-k1")).toBe(undefined);
-    expect(ttlCache.get("unknown-k2")).toBe(undefined);
+    jest.advanceTimersByTime(150); 
     expect(ttlCache.get("A")).toBe(undefined);
     expect(ttlCache.get("B")).toBe(undefined);
     expect(ttlCache.get("C")).toBe("myValue3");
   });
 
-  it("has", async () => {
+  it("has 는 expire 시간이 0 으로 지정한 값은 false 가 반환되어야 합니다.", () => {
+    ttlCache.set("A", "myValue1", 0);
+    expect(ttlCache.has("A")).toBe(false);
+  });
+
+  it("has 는 지정되지 않은 key 인 경우 false 를 반환해야 합니다.", () => {
+    expect(ttlCache.has("unknown-k1")).toBe(false);
+    expect(ttlCache.has("unknown-k2")).toBe(false);
+  });
+
+  it("has 는 expire 시간이 지나지 않은 key 는 true, 지난값은 false 를 반환해야 합니다.", () => {
     ttlCache.set("A", "myValue1", 0);
     ttlCache.set("B", "myValue2", 100);
     ttlCache.set("C", "myValue3", 200);
-    expect(ttlCache.has("unknown-k1")).toBe(false);
-    expect(ttlCache.has("unknown-k2")).toBe(false);
     expect(ttlCache.has("A")).toBe(false);
     expect(ttlCache.has("B")).toBe(true);
     expect(ttlCache.has("C")).toBe(true);
-    await delay(101);
-    expect(ttlCache.has("unknown-k1")).toBe(false);
-    expect(ttlCache.has("unknown-k2")).toBe(false);
+    jest.advanceTimersByTime(150); 
     expect(ttlCache.has("A")).toBe(false);
     expect(ttlCache.has("B")).toBe(false);
     expect(ttlCache.has("C")).toBe(true);
   });
 
-  it("remove", async () => {
+  it("remove 하면 값은 제거 되어야 합니다.", () => {
     ttlCache.set("A", "myValue1", 100);
     ttlCache.set("B", "myValue2", 100);
     ttlCache.set("C", "myValue3", 200);
@@ -82,38 +96,21 @@ describe("TTLCache", () => {
     expect(ttlCache.has("C")).toBe(false);
   });
   
-  it("set exist", async () => {
+  it("존재하는 key 를 다시 set 하는 경우 갱신 되어야 합니다.", () => {
     ttlCache.set("A", "myValue1", 100);
     expect(ttlCache.getKeys().length).toBe(1);
+    jest.advanceTimersByTime(150); 
+    expect(ttlCache.getKeys().length).toBe(0);
     ttlCache.set("A", "myValue1", 100);
     expect(ttlCache.getKeys().length).toBe(1);
+    jest.advanceTimersByTime(50); 
+    ttlCache.set("A", "myValue1", 100);
+    expect(ttlCache.getKeys().length).toBe(1);
+    jest.advanceTimersByTime(150); 
+    expect(ttlCache.getKeys().length).toBe(0);
   });
 
-  it("toJson", async () => {
-    ttlCache.set("A", "myValue1", 0);
-    ttlCache.set("B", "myValue2", 100);
-    ttlCache.set("C", "myValue3", 200);
-    expect(ttlCache.toJson()).toEqual({ B: "myValue2", C: "myValue3" });
-    await delay(101);
-    expect(ttlCache.toJson()).toEqual({ C: "myValue3" });
-  });
-
-  it("map", async () => {
-    expect(ttlCache.map).not.toBeNull();
-    expect(ttlCache.map.constructor).toBe(Map);
-  });
-
-  it("expireNotify", async () => {
-    const mockExpireNotify = spyOn(ttlCache, 'expireNotify');
-    ttlCache.set("A", "myValue1", 10);
-    ttlCache.set("B", "myValue2", 20);
-    ttlCache.set("C", "myValue3", 30);
-    expect(mockExpireNotify.calls.count()).toBe(0);
-    await delay(100);
-    expect(mockExpireNotify.calls.count()).toBe(3);
-  });
-
-  it("flushExpired", async () => {
+  test("flushExpired 는 expire 된 key 를 모두 제거해야 합니다.", () => {
     ttlCache.set("A", "myValue1", 100);
     ttlCache.set("B", "myValue2", 200);
     ttlCache.set("C", "myValue3", 300);
@@ -122,7 +119,7 @@ describe("TTLCache", () => {
     expect(ttlCache.getKeys().length).toBe(3);
   });
 
-  it("flushAll", async () => {
+  test("flushAll 은 expire 시간과 관계없이 모든 key 를 제거해야 합니다.", () => {
     ttlCache.set("A", "myValue1", 100);
     ttlCache.set("B", "myValue2", 200);
     ttlCache.set("C", "myValue3", 300);
@@ -131,7 +128,21 @@ describe("TTLCache", () => {
     expect(ttlCache.getKeys().length).toBe(0);
   });
 
-  it("destroy", async () => {
+  test("toJson", () => {
+    ttlCache.set("A", "myValue1", 0);
+    ttlCache.set("B", "myValue2", 100);
+    ttlCache.set("C", "myValue3", 200);
+    expect(ttlCache.toJson()).toEqual({ B: "myValue2", C: "myValue3" });
+    jest.advanceTimersByTime(150); 
+    expect(ttlCache.toJson()).toEqual({ C: "myValue3" });
+  });
+
+  test("map", async () => {
+    expect(ttlCache.map).not.toBeNull();
+    expect(ttlCache.map.constructor).toBe(Map);
+  });
+
+  test("destroy", () => {
     ttlCache.set("A", "myValue1", 100);
     ttlCache.set("B", "myValue2", 200);
     ttlCache.set("C", "myValue3", 300);

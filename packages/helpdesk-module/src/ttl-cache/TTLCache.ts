@@ -1,44 +1,28 @@
 import { CacheValue } from './CacheValue';
-import { Serializable } from './types';
+import type { Serializable } from './types';
 
 /**
- * ttl 캐시
+ * ttl 캐시.
+ * 일정 시간만 캐싱을 하기 위한 용도.
+ * setTimeout 을 사용하므로 정확한 시간을 보장하는게 아님.
  * @export
  * @class TTLCache
- * @example
- *  const ttlCache = new TTLCache();
- * ttlCache.set("A", "myValue1", 0);
- * ttlCache.set("B", "myValue2", 100);
- * ttlCache.set("C", "myValue3", 200);
- * ttlCache.expired("unknown-k1"); // true;
- * ttlCache.expired("unknown-k2"); // true;
- * ttlCache.expired("A"); // true;
- * ttlCache.expired("B"); // false;
- * ttlCache.expired("C")); // false;
- * ttlCache.get("unknown-k1"); // undefined
- * ttlCache.get("unknown-k2"); // undefined
- * ttlCache.get("A"); // undefined
- * ttlCache.get("B"); // "myValue2"
- * ttlCache.get("C"); // "myValue3"
- * ttlCache.toJson(); // { B: "myValue2", C: "myValue3" }
- * // await delay(101);
- * ttlCache.expired("unknown-k1"); // true
- * ttlCache.expired("unknown-k2"); // true
- * ttlCache.expired("A"); // true
- * ttlCache.expired("B"); // true
- * ttlCache.expired("C"); // false
- * ttlCache.get("unknown-k1"); // undefined
- * ttlCache.get("unknown-k2"); // undefined
- * ttlCache.get("A"); // undefined
- * ttlCache.get("B"); // undefined
- * ttlCache.get("C"); // "myValue3"
- * ttlCache.toJson(); // { C: "myValue3" }
  */
 export class TTLCache {
   protected cacheMap: Map<string, CacheValue> = new Map();
   protected now(): number {
     return Date.now();
   }
+
+  /**
+   * CacheValue 에 등록된 expire 시간(정도) 후 CacheValue 로 부터 호출을 기대하는 콜백
+   * @protected
+   */
+  protected fnExpireNotify = (key: string) => {
+    this.remove(key);
+  };
+
+  expireNotifyDeplay = 900;
 
   /**
    * 보유 맵
@@ -80,16 +64,6 @@ export class TTLCache {
   }
 
   /**
-   * CacheValue 에 등록된 expire 시간(정도) 후 CacheValue 로 부터 호출을 기대하는 콜백
-   * @param {string} key
-   */
-  expireNotify(key: string) {
-    if (this.expired(key)) {
-      this.remove(key);
-    }
-  }
-
-  /**
    * key 에 해당하는 값 반환
    * @template T
    * @param {string} key
@@ -122,8 +96,9 @@ export class TTLCache {
     }
     cacheValue.setKey(key);
     cacheValue.setValue(value);
+    cacheValue.setExpireNotifyDeplay(this.expireNotifyDeplay);
+    cacheValue.setExpireNotify(expire, this.fnExpireNotify);
     cacheValue.setExpireAt(now + +expire);
-    cacheValue.setExpireNotify(expire, this.expireNotify.bind(this));
     this.cacheMap.set(key, cacheValue);
   }
 
@@ -193,6 +168,10 @@ export class TTLCache {
    * 파기
    */
   destroy() {
-    this.flushAll();
+    try {
+      this.flushAll();
+    } catch (err) {
+      console.error(err);
+    }
   }
 }

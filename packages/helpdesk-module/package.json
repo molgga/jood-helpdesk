@@ -1,19 +1,36 @@
 {
   "name": "@jood/helpdesk-module",
   "version": "0.0.1",
-  "main": "dist/index.js",
-  "module": "dist/index.mjs",
-  "types": "dist/index.d.ts",
   "exports": {
     "./ttl-cache": {
       "default": "./dist/ttl-cache/index.js",
       "module": "./dist/ttl-cache/index.mjs",
       "types": "./dist/ttl-cache/index.d.ts"
     },
+    "./browser-cookie": {
+      "default": "./dist/browser-cookie/index.js",
+      "module": "./dist/browser-cookie/index.mjs",
+      "types": "./dist/browser-cookie/index.d.ts"
+    },
     "./browser-scroll": {
       "default": "./dist/browser-scroll/index.js",
       "module": "./dist/browser-scroll/index.mjs",
       "types": "./dist/browser-scroll/index.d.ts"
+    },
+    "./storage-archive": {
+      "default": "./dist/storage-archive/index.js",
+      "module": "./dist/storage-archive/index.mjs",
+      "types": "./dist/storage-archive/index.d.ts"
+    },
+    "./storage-cast": {
+      "default": "./dist/storage-cast/index.js",
+      "module": "./dist/storage-cast/index.mjs",
+      "types": "./dist/storage-cast/index.d.ts"
+    },
+    "./timer": {
+      "default": "./dist/timer/index.js",
+      "module": "./dist/timer/index.mjs",
+      "types": "./dist/timer/index.d.ts"
     }
   },
   "publishConfig": {
@@ -30,7 +47,9 @@
     "build:clear": "rm -rf ./dist",
     "test:unit": "jest"
   },
-  "dependencies": {},
+  "dependencies": {
+    "rxjs": "*"
+  },
   "devDependencies": {},
   "repository": {
     "type": "git",

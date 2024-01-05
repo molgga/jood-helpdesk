@@ -15,7 +15,7 @@
 
 <script lang="ts">
 import { computed, defineComponent, onMounted, onUnmounted, reactive } from 'vue';
-import { SecondTimer, MinuteTimer } from '@jood/helpdesk-timer';
+import { SecondTimer, MinuteTimer } from '@jood/helpdesk-module/timer';
 import { Subscription } from 'rxjs';
 
 export default defineComponent({

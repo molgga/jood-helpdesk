@@ -2,7 +2,7 @@ import { ArchiveList } from '../ArchiveList';
 import { ArchiveExistProcessType } from '../types';
 import { MockStorage } from './mock';
 
-describe('helpdesk-storage: ArchiveList', () => {
+describe('helpdesk-module: storage-archive: ArchiveList', () => {
   let archive: ArchiveList<{ id: any; name: any }>;
   let mockStorage: MockStorage;
 

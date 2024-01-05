@@ -1,5 +1,3 @@
-import { defineConfig } from 'vitepress';
-import path from 'path';
 import { fileURLToPath, URL } from 'node:url';
 
 const IS_BUILD = process.env.BUILD;
@@ -27,11 +25,16 @@ const sidebar = [
     ],
   },
   {
-    text: '@jood/helpdesk-timer',
+    text: '@jood/helpdesk-module',
     items: [
-      { text: 'SecondTimer', link: '/timer/SecondTimer' },
-      { text: 'MinuteTimer', link: '/timer/MinuteTimer' },
-      { text: 'Timer 심화', link: '/timer/Timer__advance' },
+      {
+        text: 'timer',
+        items: [
+          { text: 'SecondTimer', link: '/timer/SecondTimer' },
+          { text: 'MinuteTimer', link: '/timer/MinuteTimer' },
+          { text: 'Timer 심화', link: '/timer/Timer__advance' },
+        ],
+      },
     ],
   },
   {
@@ -95,7 +98,7 @@ const sidebar = [
   },
 ];
 
-export default defineConfig({
+export default {
   vite: {
     resolve: {
       alias: [
@@ -115,4 +118,4 @@ export default defineConfig({
     ],
     sidebar,
   },
-});
+};
