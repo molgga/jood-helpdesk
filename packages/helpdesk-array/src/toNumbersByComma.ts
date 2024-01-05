@@ -1,4 +1,4 @@
-import { isNumber } from '@jood/helpdesk-number';
+import { isNumber } from '@jood/helpdesk-core';
 
 /**
  * 콤마(,) 숫자 문자열을 배열로 반환합니다.

@@ -1,4 +1,4 @@
-import { isNumber } from '@jood/helpdesk-number';
+import { isNumber } from '@jood/helpdesk-core';
 
 /**
  * 지정된 인덱스에 문자를 삽입

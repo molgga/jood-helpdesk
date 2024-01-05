@@ -1,4 +1,4 @@
-import { isNumber } from '@jood/helpdesk-number';
+import { isNumber } from '@jood/helpdesk-core';
 
 /**
  * 지정된 시간 숫자 앞에 0을 채워야 하는 경우 0을 채움.

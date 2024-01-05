@@ -1,4 +1,4 @@
-import { isNumber } from '@jood/helpdesk-number';
+import { isNumber } from '@jood/helpdesk-core';
 import { DateFormatOption } from './types';
 import { toLeadingTime } from './toLeadingTime';
 
