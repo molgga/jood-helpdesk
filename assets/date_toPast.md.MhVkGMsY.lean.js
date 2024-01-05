@@ -1,0 +1,1 @@
+import{_ as s,c as i,o as a,U as h}from"./chunks/framework.WU9gZgzV.js";const F=JSON.parse('{"title":"toPast","description":"","frontmatter":{},"headers":[],"relativePath":"date/toPast.md","filePath":"date/toPast.md"}'),k={name:"date/toPast.md"},n=h("",5),t=[n];function p(l,E,e,d,r,g){return a(),i("div",null,t)}const o=s(k,[["render",p]]);export{F as __pageData,o as default};
