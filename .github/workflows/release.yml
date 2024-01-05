@@ -20,16 +20,47 @@ jobs:
       - name: Build packages & docs
         run: |
           yarn run package:deploy:ready
-          yarn run package:deploy:build
+          yarn run package:build
+          yarn run package:docs
 
       - name: Test packages
         run: yarn run package:deploy:test
+
+  npm-publish:
+    runs-on: ubuntu-latest
+    needs: release
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 18
+          registry-url: https://registry.npmjs.org/
+
+      - name: Build packages
+        run: |
+          yarn run package:deploy:ready
+          yarn run package:build
 
       - name: NPM publish core
         run: |
           npm publish ./packages/helpdesk-core
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
+
+  document-pub:
+    runs-on: ubuntu-latest
+    needs: release
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 18
+          registry-url: https://registry.npmjs.org/
+
+      - name: Build document
+        run: |
+          yarn run package:deploy:ready
+          yarn run package:docs
 
       - name: Github pages publish
         uses: peaceiris/actions-gh-pages@v3

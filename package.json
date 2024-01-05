@@ -15,8 +15,6 @@
     "package:clear": "run-p pg-core:clear pg-date:clear pg-number:clear pg-storage:clear pg-string:clear pg-timer:clear pg-array:clear pg-point:clear pg-functional:clear",
     "package:unit": "run-p pg-core:unit pg-date:unit pg-number:unit pg-storage:unit pg-string:unit pg-timer:unit pg-array:unit pg-point:unit pg-functional:unit",
     "package:deploy:ready": "yarn install --frozen-lockfile",
-    "package:deploy:test": "run-s package:unit",
-    "package:deploy:build": "run-s package:build docs:build",
     "pg-array:build": "yarn workspace @jood/helpdesk-array build",
     "pg-array:clear": "yarn workspace @jood/helpdesk-array build:clear",
     "pg-array:unit": "yarn workspace @jood/helpdesk-array test:unit",
