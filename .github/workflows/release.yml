@@ -1,0 +1,38 @@
+name: Release deploy
+
+on:
+  release:
+    types:
+      - created
+    tags:
+      - 'v[0-9]+.[0-9]+.[0-9]+**'
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 18
+          registry-url: https://registry.npmjs.org/
+
+      - name: Test packages
+        run: |
+          yarn run package:deploy:ready
+          yarn run package:deploy:test
+
+      - name: Build packages & docs
+        run: yarn run package:deploy:build
+
+      - name: NPM publish core
+        run: |
+          npm publish ./packages/helpdesk-core
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
+
+      - name: Github pages publish
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: './document/docs/.vitepress/dist'
