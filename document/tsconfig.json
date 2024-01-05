@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "target": "esnext",
-    "module": "commonjs",
+    "module": "esnext",
     "strict": true,
     "strictNullChecks": false,
     "jsx": "preserve",
@@ -13,7 +13,10 @@
     "skipLibCheck": true,
     "baseUrl": ".",
     "types": ["jest"],
-    "lib": ["esnext", "dom", "dom.iterable", "scripthost"]
+    "lib": ["esnext", "dom", "dom.iterable", "scripthost"],
+    "paths": {
+      "@jood/helpdesk-module/*": ["../packages/helpdesk-module/src/*"]
+    }
   },
   "include": ["docs/**/*.ts", "docs/**/*.vue"],
   "exclude": ["node_modules"]

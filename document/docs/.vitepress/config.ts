@@ -1,4 +1,6 @@
+import { defineConfig } from 'vitepress';
 import path from 'path';
+import { fileURLToPath, URL } from 'node:url';
 
 const IS_BUILD = process.env.BUILD;
 
@@ -93,21 +95,15 @@ const sidebar = [
   },
 ];
 
-export default {
+export default defineConfig({
   vite: {
     resolve: {
-      alias: {
-        '@jood/helpdesk-array': path.resolve(__dirname, '../../../packages/helpdesk-array/src'),
-        '@jood/helpdesk-core': path.resolve(__dirname, '../../../packages/helpdesk-core/src'),
-        '@jood/helpdesk-date': path.resolve(__dirname, '../../../packages/helpdesk-date/src'),
-        '@jood/helpdesk-functional': path.resolve(__dirname, '../../../packages/helpdesk-functional/src'),
-        '@jood/helpdesk-module/*': path.resolve(__dirname, '../../../packages/helpdesk-module/src/*'),
-        '@jood/helpdesk-number': path.resolve(__dirname, '../../../packages/helpdesk-number/src'),
-        '@jood/helpdesk-point': path.resolve(__dirname, '../../../packages/helpdesk-point/src'),
-        '@jood/helpdesk-storage': path.resolve(__dirname, '../../../packages/helpdesk-storage/src'),
-        '@jood/helpdesk-string': path.resolve(__dirname, '../../../packages/helpdesk-string/src'),
-        '@jood/helpdesk-timer': path.resolve(__dirname, '../../../packages/helpdesk-timer/src'),
-      },
+      alias: [
+        {
+          find: '@jood/helpdesk-module/',
+          replacement: fileURLToPath(new URL('../../../packages/helpdesk-module/src/', import.meta.url)),
+        },
+      ],
     },
   },
   base: IS_BUILD ? '/jood-helpdesk' : '', // https://molgga.github.io/jood-helpdesk/,
@@ -119,4 +115,4 @@ export default {
     ],
     sidebar,
   },
-};
+});
