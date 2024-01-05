@@ -42,7 +42,7 @@ export function createSubmodulePackaging() {
   for (let key in entryExports) {
     const value = entryExports[key];
     const entryModule = key.replace(/^\.\//, '');
-    const entryName = value.default.replace(/\.js$/, '');
+    const entryName = value.require.replace(/\.js$/, '');
     const plugins = [esbuild()];
     if (i === 0) {
       plugins.push(del({ targets: 'dist/*' }));
