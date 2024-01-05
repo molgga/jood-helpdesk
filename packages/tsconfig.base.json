@@ -17,6 +17,16 @@
     "noImplicitAny": false,
     "baseUrl": ".",
     "types": ["jest"],
+    "paths": {
+      "@jood/helpdesk-array": ["./helpdesk-array/src/index"],
+      "@jood/helpdesk-core": ["./helpdesk-core/src/index"],
+      "@jood/helpdesk-date": ["./helpdesk-date/src/index"],
+      "@jood/helpdesk-functional": ["./helpdesk-functional/src/index"],
+      "@jood/helpdesk-module/*": ["./helpdesk-module/src/*/index"],
+      "@jood/helpdesk-number": ["./helpdesk-number/src/index"],
+      "@jood/helpdesk-point": ["./helpdesk-point/src/index"],
+      "@jood/helpdesk-string": ["./helpdesk-string/src/index"]
+    },
     "lib": ["esnext", "dom", "dom.iterable", "scripthost"]
   },
   "exclude": ["node_modules"]
