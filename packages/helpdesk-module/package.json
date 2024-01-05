@@ -1,69 +1,58 @@
 {
   "name": "@jood/helpdesk-module",
-  "version": "0.0.4",
-  "main": "dist/index.js",
-  "module": "dist/index.mjs",
-  "types": "dist/index.d.ts",
+  "version": "0.0.5",
   "exports": {
     "./ttl-cache": {
-      "require": {
-        "types": "./dist/ttl-cache/index.d.ts",
-        "default": "./dist/ttl-cache/index.js"
-      },
-      "import": {
-        "types": "./dist/ttl-cache/index.d.mts",
-        "default": "./dist/ttl-cache/index.mjs"
-      }
+      "require": "./dist/ttl-cache/index.js",
+      "import": "./dist/ttl-cache/index.mjs",
+      "types": "./dist/ttl-cache/index.d.ts"
     },
     "./browser-cookie": {
-      "require": {
-        "types": "./dist/browser-cookie/index.d.ts",
-        "default": "./dist/browser-cookie/index.js"
-      },
-      "import": {
-        "types": "./dist/browser-cookie/index.d.mts",
-        "default": "./dist/browser-cookie/index.mjs"
-      }
+      "require": "./dist/browser-cookie/index.js",
+      "import": "./dist/browser-cookie/index.mjs",
+      "types": "./dist/browser-cookie/index.d.ts"
     },
     "./browser-scroll": {
-      "require": {
-        "types": "./dist/browser-scroll/index.d.ts",
-        "default": "./dist/browser-scroll/index.js"
-      },
-      "import": {
-        "types": "./dist/browser-scroll/index.d.mts",
-        "default": "./dist/browser-scroll/index.mjs"
-      }
+      "require": "./dist/browser-scroll/index.js",
+      "import": "./dist/browser-scroll/index.mjs",
+      "types": "./dist/browser-scroll/index.d.ts"
     },
     "./storage-archive": {
-      "require": {
-        "types": "./dist/storage-archive/index.d.ts",
-        "default": "./dist/storage-archive/index.js"
-      },
-      "import": {
-        "types": "./dist/storage-archive/index.d.mts",
-        "default": "./dist/storage-archive/index.mjs"
-      }
+      "require": "./dist/storage-archive/index.js",
+      "import": "./dist/storage-archive/index.mjs",
+      "types": "./dist/storage-archive/index.d.ts"
     },
     "./storage-cast": {
-      "require": {
-        "types": "./dist/storage-cast/index.d.ts",
-        "default": "./dist/storage-cast/index.js"
-      },
-      "import": {
-        "types": "./dist/storage-cast/index.d.mts",
-        "default": "./dist/storage-cast/index.mjs"
-      }
+      "require": "./dist/storage-cast/index.js",
+      "import": "./dist/storage-cast/index.mjs",
+      "types": "./dist/storage-cast/index.d.ts"
     },
     "./timer": {
-      "require": {
-        "types": "./dist/timer/index.d.ts",
-        "default": "./dist/timer/index.js"
-      },
-      "import": {
-        "types": "./dist/timer/index.d.mts",
-        "default": "./dist/timer/index.mjs"
-      }
+      "require": "./dist/timer/index.js",
+      "import": "./dist/timer/index.mjs",
+      "types": "./dist/timer/index.d.ts"
+    }
+  },
+  "typesVersions": {
+    "*": {
+      "ttl-cache": [
+        "dist/ttl-cache/index.d.ts"
+      ],
+      "browser-cookie": [
+        "dist/browser-cookie/index.d.ts"
+      ],
+      "browser-scroll": [
+        "dist/browser-scroll/index.d.ts"
+      ],
+      "storage-archive": [
+        "dist/storage-archive/index.d.ts"
+      ],
+      "storage-cast": [
+        "dist/storage-cast/index.d.ts"
+      ],
+      "timer": [
+        "dist/timer/index.d.ts"
+      ]
     }
   },
   "publishConfig": {

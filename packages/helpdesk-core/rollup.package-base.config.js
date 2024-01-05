@@ -42,13 +42,14 @@ export function createSubmodulePackaging() {
   for (let key in entryExports) {
     const value = entryExports[key];
     const entryModule = key.replace(/^\.\//, '');
-    const entryName = value.require.default.replace(/\.js$/, '');
+    const entryName = value.require.replace(/\.js$/, '');
+    const plugins = [esbuild()];
     if (i === 0) {
-      arr.push(...createPackaging());
+      plugins.push(del({ targets: 'dist/*' }));
     }
     arr.push(
       createSubmoduleBundle(entryModule, {
-        plugins: [esbuild()],
+        plugins,
         output: [
           { file: `${entryName}.js`, format: 'cjs', sourcemap: true },
           { file: `${entryName}.mjs`, format: 'es', sourcemap: true },
@@ -60,15 +61,6 @@ export function createSubmodulePackaging() {
         plugins: [dts()],
         output: {
           file: `${entryName}.d.ts`,
-          format: 'es',
-        },
-      })
-    );
-    arr.push(
-      createSubmoduleBundle(entryModule, {
-        plugins: [dts()],
-        output: {
-          file: `${entryName}.d.mts`,
           format: 'es',
         },
       })
