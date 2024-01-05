@@ -11,9 +11,9 @@
   "scripts": {
     "bootstrap": "yarn run bootstrap:install && yarn run package:build",
     "bootstrap:install": "yarn install --production=false",
-    "package:build": "yarn run pg-core:build && run-p pg-date:build pg-number:build pg-storage:build pg-string:build pg-timer:build pg-array:build pg-point:build pg-functional:build",
-    "package:clear": "run-p pg-core:clear pg-date:clear pg-number:clear pg-storage:clear pg-string:clear pg-timer:clear pg-array:clear pg-point:clear pg-functional:clear",
-    "package:unit": "run-p pg-core:unit pg-date:unit pg-number:unit pg-storage:unit pg-string:unit pg-timer:unit pg-array:unit pg-point:unit pg-functional:unit",
+    "package:build": "yarn run pg-core:build && run-p pg-date:build pg-number:build pg-storage:build pg-string:build pg-timer:build pg-array:build pg-point:build pg-functional:build pg-module:build",
+    "package:clear": "run-p pg-core:clear pg-date:clear pg-number:clear pg-storage:clear pg-string:clear pg-timer:clear pg-array:clear pg-point:clear pg-functional:clear pg-module:clear",
+    "package:unit": "run-p pg-core:unit pg-date:unit pg-number:unit pg-storage:unit pg-string:unit pg-timer:unit pg-array:unit pg-point:unit pg-functional:unit pg-module:unit",
     "package:deploy:ready": "yarn install --frozen-lockfile",
     "pg-array:build": "yarn workspace @jood/helpdesk-array build",
     "pg-array:clear": "yarn workspace @jood/helpdesk-array build:clear",
@@ -42,6 +42,9 @@
     "pg-timer:build": "yarn workspace @jood/helpdesk-timer build",
     "pg-timer:clear": "yarn workspace @jood/helpdesk-timer build:clear",
     "pg-timer:unit": "yarn workspace @jood/helpdesk-timer test:unit",
+    "pg-module:build": "yarn workspace @jood/helpdesk-module build",
+    "pg-module:clear": "yarn workspace @jood/helpdesk-module build:clear",
+    "pg-module:unit": "yarn workspace @jood/helpdesk-module test:unit",
     "docs:build": "yarn workspace document docs:build"
   },
   "keywords": [],

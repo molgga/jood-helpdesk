@@ -15,5 +15,6 @@
     "types": ["jest"],
     "lib": ["esnext", "dom", "dom.iterable", "scripthost"]
   },
+  "include": ["docs/**/*.ts", "docs/**/*.vue"],
   "exclude": ["node_modules"]
 }

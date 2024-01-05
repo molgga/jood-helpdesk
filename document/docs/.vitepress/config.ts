@@ -97,9 +97,13 @@ export default {
   vite: {
     resolve: {
       alias: {
+        '@jood/helpdesk-array': path.resolve(__dirname, '../../../packages/helpdesk-array/src'),
         '@jood/helpdesk-core': path.resolve(__dirname, '../../../packages/helpdesk-core/src'),
         '@jood/helpdesk-date': path.resolve(__dirname, '../../../packages/helpdesk-date/src'),
+        '@jood/helpdesk-functional': path.resolve(__dirname, '../../../packages/helpdesk-functional/src'),
+        '@jood/helpdesk-module/*': path.resolve(__dirname, '../../../packages/helpdesk-module/src/*'),
         '@jood/helpdesk-number': path.resolve(__dirname, '../../../packages/helpdesk-number/src'),
+        '@jood/helpdesk-point': path.resolve(__dirname, '../../../packages/helpdesk-point/src'),
         '@jood/helpdesk-storage': path.resolve(__dirname, '../../../packages/helpdesk-storage/src'),
         '@jood/helpdesk-string': path.resolve(__dirname, '../../../packages/helpdesk-string/src'),
         '@jood/helpdesk-timer': path.resolve(__dirname, '../../../packages/helpdesk-timer/src'),
