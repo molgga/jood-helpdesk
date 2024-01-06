@@ -25,3 +25,12 @@ jobs:
       - name: Test packages
         run: yarn run package:unit
 
+      # docs
+      - name: Build document
+        run: yarn run docs:build
+
+      - name: Github pages publish
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: './document/docs/.vitepress/dist'

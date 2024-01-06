@@ -70,6 +70,12 @@ jobs:
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
 
+      - name: NPM publish color
+        if: always()
+        run: npm publish ./packages/helpdesk-color
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
+
       - name: NPM publish core
         if: always()
         run: npm publish ./packages/helpdesk-core
