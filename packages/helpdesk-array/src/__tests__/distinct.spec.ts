@@ -1,6 +1,6 @@
 import { distinct } from '../distinct';
 
-describe('utils/array/distinct', () => {
+describe('helpdesk-array: distinct', () => {
   it('중복된 값을 제외시킨 배열을 반환해야 합니다.', () => {
     const arr1 = [1, 2, 3, 4, 5];
     const arr2 = [1, 2, 1, 3, 4, 4, 3, 5, 1];

@@ -1,7 +1,7 @@
 import { uniqueFilter } from './uniqueFilter';
 
 /**
- * 중복된 값을 제외시킨 배열을 반환 합니다.
+ * 중복된 값을 제외시킨 배열을 반환합니다.
  * @param source 소스 배열
  * @param [uniqueFn] 직접 filter 할 key 값을 반환할 수 있는 함수
  * @example

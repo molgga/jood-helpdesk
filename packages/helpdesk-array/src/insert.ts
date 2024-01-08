@@ -1,6 +1,6 @@
 /**
  * 지정된 source 배열의 index 에 value 를 삽입합니다.
- * (원본 source 가 직접 변경 됩니다.)
+ * (원본 source 가 직접 변경됩니다.)
  * @param source 소스 배열
  * @param [index=0] 삽입될 인덱스
  * @param value 삽입될 값

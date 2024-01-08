@@ -1,6 +1,6 @@
 import { availableOr } from '../availableOr';
 
-describe('utils/array/availableOr', () => {
+describe('helpdesk-array: availableOr', () => {
   it('허용되는 배열에 존재하면 존재한 값이 반환되어야 합니다.', () => {
     const values = [0, 1, 2, 3];
     expect(availableOr(values, 0, 99)).toBe(0);

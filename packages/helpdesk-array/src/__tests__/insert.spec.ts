@@ -1,6 +1,6 @@
 import { insert } from '../insert';
 
-describe('utils/array/insert', () => {
+describe('helpdesk-array: insert', () => {
   it('지정된 배열의 index 에 value 가 삽입되어야 합니다.', () => {
     expect(insert([1, 2, 3], 1, 99)).toEqual([1, 99, 2, 3]);
     expect(insert([1, 2, 3], 1, ["A", "B"])).toEqual([1, "A", "B", 2, 3]);

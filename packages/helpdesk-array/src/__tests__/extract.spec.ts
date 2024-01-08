@@ -1,6 +1,6 @@
 import { extract } from '../extract';
 
-describe('utils/array/extract', () => {
+describe('helpdesk-array: extract', () => {
   it('지정된 배열의 index 에서 deleteCount 만큼 제거되어야 합니다.', () => {
     expect(extract([1, 2, 3, 4])).toEqual([2, 3, 4]);
     expect(extract([1, 2, 3, 4], 1, 1)).toEqual([1, 3, 4]);

@@ -1,6 +1,6 @@
 import { transposeRow } from '../transposeRow';
 
-describe('utils/array/transposeRow', () => {
+describe('helpdesk-array: transposeRow', () => {
 
   it('1차원 행[]을 2차원 행열[][]로 만들어야 합니다.', () => {
     // 차트 같은것을 만들때 종종 필요

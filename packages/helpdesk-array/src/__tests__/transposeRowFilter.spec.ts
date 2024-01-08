@@ -1,6 +1,6 @@
 import { transposeRowFilter } from '../transposeRowFilter';
 
-describe('utils/array/transposeRowFilter', () => {
+describe('helpdesk-array: transposeRowFilter', () => {
 
   it('1차원 행[]을 필터를 거쳐가는 2차원 행열[][]로 만듭니다.', () => {
     // 차트 같은것을 만들때 종종 필요

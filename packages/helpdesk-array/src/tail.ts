@@ -1,5 +1,5 @@
 /**
- * 지정된 배열의 뒤쪽 index 아이템을 반환 합니다.
+ * 지정된 배열의 뒤쪽 index 아이템을 반환합니다.
  * @template T
  * @param source 소스 배열
  * @param [shiftIndex=0] 아이템을 꺼낼 index. (뒤에서 앞으로)

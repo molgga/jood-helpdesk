@@ -1,6 +1,6 @@
 import { uniqueFilter } from '../uniqueFilter';
 
-describe('utils/array/uniqueFilter', () => {
+describe('helpdesk-array: uniqueFilter', () => {
 
   it('배열의 filter 에 들어갈 유니크 key 를 걸러내는 함수를 만듭니다.', () => {
     const arr = [

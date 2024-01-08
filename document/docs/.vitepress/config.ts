@@ -89,6 +89,22 @@ const sidebar = [
     ],
   },
   {
+    text: '@jood/helpdesk-array',
+    items: [
+      { text: 'availableOr', link: '/array/availableOr' },
+      { text: 'distinct', link: '/array/distinct' },
+      { text: 'extract', link: '/array/extract' },
+      { text: 'insert', link: '/array/insert' },
+      { text: 'shuffle', link: '/array/shuffle' },
+      { text: 'tail', link: '/array/tail' },
+      { text: 'toNumbersByComma', link: '/array/toNumbersByComma' },
+      { text: 'toStringsByComma', link: '/array/toStringsByComma' },
+      { text: 'transposeRow', link: '/array/transposeRow' },
+      { text: 'transposeRowFilter', link: '/array/transposeRowFilter' },
+      { text: 'uniqueFilter', link: '/array/uniqueFilter' },
+    ],
+  },
+  {
     text: '@jood/helpdesk-functional',
     items: [
       { text: 'debounce', link: '/functional/debounce' },
@@ -147,5 +163,11 @@ export default {
       { text: 'Github', link: 'https://github.com/molgga/jood-helpdesk' },
     ],
     sidebar,
+  },
+  markdown: {
+    theme: {
+      light: 'github-light',
+      dark: 'github-dark',
+    },
   },
 };

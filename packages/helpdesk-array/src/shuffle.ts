@@ -1,7 +1,7 @@
 import { getRandomizer } from '@jood/helpdesk-number';
 
 /**
- * 배열을 섞습니다.
+ * 배열을 섞습니다.  (원본 source 가 직접 변경됩니다.)
  * @param source 소스 배열
  * @param [seed] [getRandomizer]{@link getRandomizer}
  * @example

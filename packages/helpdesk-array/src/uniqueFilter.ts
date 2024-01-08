@@ -9,10 +9,10 @@
  *   { id: 1, name: "google" },
  *   { id: 3, name: "amazone" }
  * ];
- * const idFilter = (item) => item.id;
- * const nameFilter = (item) => item.name;
- * console.log(arr1.filter(uniqueFilter(idFilter))); // [{ id: 1, name: "google" },{ id: 2, name: "microsoft" },{ id: 3, name: "amazone" } ]
- * console.log(arr1.filter(uniqueFilter(nameFilter))); // [{ id: 1, name: "google" },{ id: 2, name: "microsoft" },{ id: 3, name: "amazone" } ]
+ * const idFilter = uniqueFilter((item) => item.id);
+ * const nameFilter = uniqueFilter((item) => item.name);
+ * console.log(arr1.filter(idFilter)); // [{ id: 1, name: "google" },{ id: 2, name: "microsoft" },{ id: 3, name: "amazone" } ]
+ * console.log(arr1.filter(nameFilter)); // [{ id: 1, name: "google" },{ id: 2, name: "microsoft" },{ id: 3, name: "amazone" } ]
  */
 export function uniqueFilter<T>(uniqueFn: (item: T) => string | any): (item: T) => boolean {
   const hash: { [key: string]: boolean } = {};

@@ -1,5 +1,5 @@
 /**
- * 지정된 avaliable 에 value 가 포함되는 경우 value 를, 그렇지 않은 경우 or 값을 반환
+ * 지정된 avaliable 에 value 가 포함되는 경우 value 를, 그렇지 않은 경우 or 값을 반환합니다.
  * @template T
  * @param [available=[]] 유효한 값들
  * @param value 검사할 값

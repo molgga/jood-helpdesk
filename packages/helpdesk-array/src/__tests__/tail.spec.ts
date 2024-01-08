@@ -1,6 +1,6 @@
 import { tail } from '../tail';
 
-describe('utils/array/tail', () => {
+describe('helpdesk-array: tail', () => {
   it('지정된 배열의 뒤쪽 index 아이템을 반환해야 합니다.', () => {
     const arr1 = [1, 2, 3, 4];
     expect(tail(arr1, -1)).toBe(4);
