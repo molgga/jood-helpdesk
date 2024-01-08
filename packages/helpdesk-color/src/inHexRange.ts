@@ -2,7 +2,7 @@ import { hexToRgb } from './hexToRgb';
 import { inRgbRange } from './inRgbRange';
 
 /**
- * minHex 와 maxHex 값 사이의 percent 에 해당하는 rgb 값을 반환 합니다.
+ * minHex 와 maxHex 값 사이의 percent 에 해당하는 rgb 값을 반환합니다.
  * @export
  * @param minHex
  * @param maxHex

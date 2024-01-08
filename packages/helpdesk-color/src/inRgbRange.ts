@@ -1,5 +1,5 @@
 /**
- * minRgb 과 maxRgb 값 사이의 percent 에 해당하는 rgb 값을 반환 합니다.
+ * minRgb 과 maxRgb 값 사이의 percent 에 해당하는 rgb 값을 반환합니다.
  * @export
  * @param minRgb
  * @param maxRgb

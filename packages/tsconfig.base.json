@@ -19,6 +19,7 @@
     "types": ["jest"],
     "paths": {
       "@jood/helpdesk-array": ["./helpdesk-array/src/index"],
+      "@jood/helpdesk-color": ["./helpdesk-color/src/index"],
       "@jood/helpdesk-core": ["./helpdesk-core/src/index"],
       "@jood/helpdesk-date": ["./helpdesk-date/src/index"],
       "@jood/helpdesk-functional": ["./helpdesk-functional/src/index"],
