@@ -1,5 +1,8 @@
-# sizeToCover
+<script setup>
+import ExampleSizeToCover from './components/ExampleSizeToCover.vue'
+</script>
 
+# sizeToCover
 
 원본 사이즈(sw, sh)의 비율을 유지 하면서, 컨테이너 사이즈(cw, ch)를 가득 채우는 바운더리 정보를 반환합니다.
 
@@ -34,3 +37,10 @@ img.left = draw.dx;
 img.width = draw.dw;
 img.height = draw.dh;
 ```
+
+***
+
+
+<ExampleSizeToCover />
+
+<<< ./components/ExampleSizeToCover.vue

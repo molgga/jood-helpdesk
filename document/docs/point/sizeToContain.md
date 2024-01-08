@@ -1,3 +1,7 @@
+<script setup>
+import ExampleSizeToContain from './components/ExampleSizeToContain.vue'
+</script>
+
 # sizeToContain
 
 원본 사이즈(sw, sh)의 비율을 유지 하면서, 컨테이너 사이즈(cw, ch) 내부에 들어갈 때 그려져야 하는 바운더리(dx, dy, dw, dh) 정보를 반환합니다.
@@ -33,3 +37,10 @@ img.left = draw.dx;
 img.width = draw.dw;
 img.height = draw.dh;
 ```
+
+***
+
+
+<ExampleSizeToContain />
+
+<<< ./components/ExampleSizeToContain.vue
