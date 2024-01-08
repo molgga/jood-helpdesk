@@ -2,11 +2,6 @@
   "name": "@jood/helpdesk-module",
   "version": "0.0.5",
   "exports": {
-    "./ttl-cache": {
-      "require": "./dist/ttl-cache/index.js",
-      "import": "./dist/ttl-cache/index.mjs",
-      "types": "./dist/ttl-cache/index.d.ts"
-    },
     "./browser-cookie": {
       "require": "./dist/browser-cookie/index.js",
       "import": "./dist/browser-cookie/index.mjs",
@@ -16,6 +11,16 @@
       "require": "./dist/browser-scroll/index.js",
       "import": "./dist/browser-scroll/index.mjs",
       "types": "./dist/browser-scroll/index.d.ts"
+    },
+    "./hangul-core": {
+      "require": "./dist/hangul-core/index.js",
+      "import": "./dist/hangul-core/index.mjs",
+      "types": "./dist/hangul-core/index.d.ts"
+    },
+    "./hangul-typist": {
+      "require": "./dist/hangul-typist/index.js",
+      "import": "./dist/hangul-typist/index.mjs",
+      "types": "./dist/hangul-typist/index.d.ts"
     },
     "./storage-archive": {
       "require": "./dist/storage-archive/index.js",
@@ -31,18 +36,26 @@
       "require": "./dist/timer/index.js",
       "import": "./dist/timer/index.mjs",
       "types": "./dist/timer/index.d.ts"
+    },
+    "./ttl-cache": {
+      "require": "./dist/ttl-cache/index.js",
+      "import": "./dist/ttl-cache/index.mjs",
+      "types": "./dist/ttl-cache/index.d.ts"
     }
   },
   "typesVersions": {
     "*": {
-      "ttl-cache": [
-        "dist/ttl-cache/index.d.ts"
-      ],
       "browser-cookie": [
         "dist/browser-cookie/index.d.ts"
       ],
       "browser-scroll": [
         "dist/browser-scroll/index.d.ts"
+      ],
+      "hangul-core": [
+        "dist/hangul-core/index.d.ts"
+      ],
+      "hangul-typist": [
+        "dist/hangul-typist/index.d.ts"
       ],
       "storage-archive": [
         "dist/storage-archive/index.d.ts"
@@ -52,6 +65,9 @@
       ],
       "timer": [
         "dist/timer/index.d.ts"
+      ],
+      "ttl-cache": [
+        "dist/ttl-cache/index.d.ts"
       ]
     }
   },
@@ -70,7 +86,8 @@
     "test:unit": "jest"
   },
   "dependencies": {
-    "rxjs": "*"
+    "rxjs": "*",
+    "@jood/helpdesk-functional": "*"
   },
   "devDependencies": {},
   "repository": {
