@@ -30,9 +30,16 @@ const sidebar = [
       {
         text: 'timer',
         items: [
-          { text: 'SecondTimer', link: '/timer/SecondTimer' },
-          { text: 'MinuteTimer', link: '/timer/MinuteTimer' },
-          { text: 'Timer 심화', link: '/timer/Timer__advance' },
+          { text: 'SecondTimer', link: '/module/timer/SecondTimer' },
+          { text: 'MinuteTimer', link: '/module/timer/MinuteTimer' },
+          { text: 'Timer 심화', link: '/module/timer/Timer__advance' },
+        ],
+      },
+      {
+        text: 'browser-scroll',
+        items: [
+          { text: 'BrowserScroll', link: '/module/browser-scroll/BrowserScroll' },
+          { text: 'DomScroll', link: '/module/browser-scroll/DomScroll' },
         ],
       },
     ],
