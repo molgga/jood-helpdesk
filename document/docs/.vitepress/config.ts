@@ -42,6 +42,13 @@ const sidebar = [
           { text: 'DomScroll', link: '/module/browser-scroll/DomScroll' },
         ],
       },
+      {
+        text: 'storage-archive',
+        items: [
+          { text: 'ArchiveData', link: '/module/storage-archive/ArchiveData' },
+          { text: 'ArchiveList', link: '/module/storage-archive/ArchiveList' },
+        ],
+      },
     ],
   },
   {
