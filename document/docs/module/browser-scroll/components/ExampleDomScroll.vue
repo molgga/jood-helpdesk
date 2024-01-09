@@ -1,7 +1,7 @@
 <template>
   <div class="scroll-exam">
     <div ref="refScrollElement" class="scroll-wrap">
-      <div v-for="i in 5" :key="i" class="box"></div>
+      <div v-for="i in 5" :key="i" class="box">scroll scroll scroll scroll scroll scroll scroll scroll</div>
     </div>
     <div class="scroll-state">{{ JSON.stringify(state, null, 4) }}</div>
   </div>
@@ -89,6 +89,7 @@ onUnmounted(() => {
 }
 .scroll-wrap {
   flex: 1;
+  flex-shrink: 1;
   border: 1px dashed #999;
   height: 300px;
   overflow: auto;

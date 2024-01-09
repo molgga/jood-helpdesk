@@ -1,12 +1,11 @@
 <template>
   <div class="to-diff-hms">
     <div class="print-state">
-      <div class="aside">
-        <el-button @click="onExecute">👆 오늘 자정까지 남은 시간은?</el-button>
-      </div>
-      <div class="spacer"></div>
       <div class="bside">
         <div class="result">{{ viewState.result }}</div>
+      </div>
+      <div class="aside">
+        <el-button @click="onExecute">👆 오늘 자정까지 남은 시간은?</el-button>
       </div>
     </div>
     <div class="real-state">
@@ -69,20 +68,17 @@ export default defineComponent({
   border-radius: 10px;
   background: var(--vp-code-block-bg);
   .print-state {
-    display: flex;
-    align-items: center;
-    .spacer {
-      flex: 1;
-    }
     .result {
       font-weight: bold;
       font-size: 1.4rem;
+    }
+    .aside {
+      margin-top: 10px;
     }
   }
   .real-state {
     display: block;
     padding-top: 12px;
-    text-align: right;
   }
 }
 </style>

@@ -69,8 +69,11 @@ onUnmounted(() => {
 
 <style lang="scss" scoped>
 .box {
+  display: flex;
+  align-items: center;
   margin: 10px;
-  padding: 100px 10px;
+  padding: 0 10px;
+  height: 200px;
   text-align: center;
   border: 1px dashed #ddd;
 }

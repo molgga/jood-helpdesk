@@ -13,7 +13,7 @@ import { typingMatrix } from '@jood/helpdesk-module/hangul-core';
 import { ManualTypist } from '@jood/helpdesk-module/hangul-typist';
 
 const source = `안녕하세요. 반갑습니다 😎
-가끔 필요할때가 있어서 만들어 봅니다~`;
+가끔 필요할때가 있어서 만들어 둡니다~`;
 
 const manual = new ManualTypist();
 manual.observe().subscribe((evt) => {

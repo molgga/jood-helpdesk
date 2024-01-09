@@ -1,7 +1,7 @@
 # toDiffHMS
 
 fromAt 이 toAt 까지 얼마나 남았는지 반환합니다.
-일자의 차이는 +24시간 으로 계산한다.
+일자의 차이는 24+n시간 으로 계산합니다.
 
 ```ts
 toDiffHMS(fromAt, toAt);
