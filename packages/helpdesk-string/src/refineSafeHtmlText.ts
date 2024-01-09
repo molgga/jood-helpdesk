@@ -19,6 +19,5 @@ export const refineSafeHtmlText = (source: string): string => {
   } catch (err) {
     refine = source;
   }
-  console.log(112, refine);
   return refine;
 };
