@@ -27,7 +27,6 @@ const sidebar = [
     text: '@jood/helpdesk-date',
     items: [
       { text: 'isDate', link: '/date/isDate' },
-      { text: 'toAtByYyyymmdd', link: '/date/toAtByYyyymmdd' },
       { text: 'toBeLeft', link: '/date/toBeLeft' },
       { text: 'toFormat', link: '/date/toFormat' },
       { text: 'toFormat 심화', link: '/date/toFormat__2' },
@@ -37,6 +36,7 @@ const sidebar = [
       { text: 'toPast', link: '/date/toPast' },
       { text: 'toPast 심화', link: '/date/toPast__2' },
       { text: 'toTimezoneOffsetAt', link: '/date/toTimezoneOffsetAt' },
+      { text: 'toAtByYyyymmdd', link: '/date/toAtByYyyymmdd' },
       { text: 'toYyyymmddByAt', link: '/date/toYyyymmddByAt' },
     ],
   },

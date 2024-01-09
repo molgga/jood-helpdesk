@@ -19,7 +19,7 @@ toPast(fromAt, pastAt, {
 ```
 
 ```ts
-const now = new Date("2019-12-22 08:10:20").getTime();
+const now = new Date("2023-12-22 08:10:20").getTime();
 toPast(now, new Date('2023-12-22 08:09:21').getTime()); // '방금 전'
 toPast(now, new Date('2023-12-22 08:00:20').getTime()); // '10분 전'
 toPast(now, new Date('2023-12-22 07:10:20').getTime()); // '1시간 전'
