@@ -133,11 +133,20 @@ const sidebar = [
           { text: 'ArchiveList', link: '/module/storage-archive/ArchiveList' },
         ],
       },
+      {
+        text: 'hangul-core',
+        items: [{ text: '한글', link: '/module/hangul-core/index' }],
+      },
+      {
+        text: 'hangul-typist',
+        items: [{ text: '한글 타이핑 애니메이션', link: '/module/hangul-typist/index' }],
+      },
     ],
   },
 ];
 
 export default {
+  title: '@jood/helpdesk',
   vite: {
     resolve: {
       alias: [
