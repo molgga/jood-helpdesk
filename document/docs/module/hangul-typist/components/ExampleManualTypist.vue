@@ -36,7 +36,7 @@ const state = reactive({
   output: '',
   typingIndex: 0,
   typingTotal: 0,
-  min: 40,
+  min: 10,
   max: 50,
 });
 
