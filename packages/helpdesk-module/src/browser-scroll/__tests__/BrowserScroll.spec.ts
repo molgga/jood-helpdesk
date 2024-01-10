@@ -1,22 +1,23 @@
 import { Subscription } from 'rxjs';
 import { BrowserScroll } from "../BrowserScroll";
+import { MockInstance } from '@vitest/spy'
 
 interface SpyMocks {
-  mockScrollTop?: jest.SpyInstance<number, []>;
-  mockScrollHeight?: jest.SpyInstance<number, []>;
-  mockInnerHeight?: jest.SpyInstance<number, []>;
-  mockScrollLeft?: jest.SpyInstance<number, []>;
-  mockScrollWidth?: jest.SpyInstance<number, []>;
-  mockInnerWidth?: jest.SpyInstance<number, []>;
+  mockScrollTop?: MockInstance<[], number>;
+  mockScrollHeight?: MockInstance<[], number>;
+  mockInnerHeight?: MockInstance<[], number>;
+  mockScrollLeft?: MockInstance<[], number>;
+  mockScrollWidth?: MockInstance<[], number>;
+  mockInnerWidth?: MockInstance<[], number>;
 }
 
 function spyCreate(browserScroll: BrowserScroll) {
-  const mockScrollTop = jest.spyOn(browserScroll, 'scrollTop', 'get');
-  const mockScrollHeight = jest.spyOn(browserScroll, 'scrollHeight', 'get');
-  const mockInnerHeight = jest.spyOn(browserScroll, 'innerHeight', 'get');
-  const mockScrollLeft = jest.spyOn(browserScroll, 'scrollLeft', 'get');
-  const mockScrollWidth = jest.spyOn(browserScroll, 'scrollWidth', 'get');
-  const mockInnerWidth = jest.spyOn(browserScroll, 'innerWidth', 'get');
+  const mockScrollTop = vi.spyOn(browserScroll, 'scrollTop', 'get');
+  const mockScrollHeight = vi.spyOn(browserScroll, 'scrollHeight', 'get');
+  const mockInnerHeight = vi.spyOn(browserScroll, 'innerHeight', 'get');
+  const mockScrollLeft = vi.spyOn(browserScroll, 'scrollLeft', 'get');
+  const mockScrollWidth = vi.spyOn(browserScroll, 'scrollWidth', 'get');
+  const mockInnerWidth = vi.spyOn(browserScroll, 'innerWidth', 'get');
   return {
     mockScrollTop,
     mockScrollHeight,
@@ -87,7 +88,7 @@ describe('BrowserScroll', () => {
   });
 
   it('리사이즈 이벤트가 발생하면 스크롤 이벤트가 발생하고 내부 스크롤 핸들러(스크롤 정보 확인)가 동작해야 합니다.', () => {
-    const mockScroll = jest.spyOn(browserScroll, 'scrollTop', 'get');
+    const mockScroll = vi.spyOn(browserScroll, 'scrollTop', 'get');
     expect(mockScroll.mock.calls.length).toBe(0);
     window.dispatchEvent(new Event('resize'));
     expect(1 <= mockScroll.mock.calls.length).toBe(true);

@@ -3,11 +3,11 @@ import { debounce } from '../debounce';
 describe('utils/functional/debounce', () => {
 
   beforeEach(() => {
-    jest.useFakeTimers();
+    vi.useFakeTimers();
   });
 
   afterEach(() => {
-    jest.useRealTimers();
+    vi.useRealTimers();
   });
 
   it('debounce', () => {
@@ -22,7 +22,7 @@ describe('utils/functional/debounce', () => {
     onDebounce();
     onDebounce();
     onDebounce();
-    jest.advanceTimersByTime(150);
+    vi.advanceTimersByTime(150);
     expect(callCount).toBe(1);
   });
 });

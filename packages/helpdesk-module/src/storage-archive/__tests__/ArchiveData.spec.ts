@@ -29,16 +29,16 @@ describe('helpdesk-module: storage-archive: ArchiveData', () => {
     let row = archive.get();
     expect(row).toBe(null);
 
-    archive.nowTime = jest.fn(() => 0);
+    archive.nowTime = vi.fn(() => 0);
     archive.set('some-data');
     row = archive.get();
     expect(row.data).toBe('some-data');
 
-    archive.nowTime = jest.fn(() => 10);
+    archive.nowTime = vi.fn(() => 10);
     row = archive.get();
     expect(row.data).toBe('some-data');
 
-    archive.nowTime = jest.fn(() => 21);
+    archive.nowTime = vi.fn(() => 21);
     row = archive.get();
     expect(row).toBe(null);
   });
@@ -49,21 +49,21 @@ describe('helpdesk-module: storage-archive: ArchiveData', () => {
     let row = archive.get();
     expect(row).toBe(null);
 
-    archive.nowTime = jest.fn(() => 0);
+    archive.nowTime = vi.fn(() => 0);
     archive.set('some-data');
     row = archive.get();
     expect(row.data).toBe('some-data');
 
-    archive.nowTime = jest.fn(() => 10);
+    archive.nowTime = vi.fn(() => 10);
     archive.set('some-data'); // 다시 set
     row = archive.get();
     expect(row.data).toBe('some-data');
 
-    archive.nowTime = jest.fn(() => 20);
+    archive.nowTime = vi.fn(() => 20);
     row = archive.get();
     expect(row.data).toBe('some-data');
 
-    archive.nowTime = jest.fn(() => 30);
+    archive.nowTime = vi.fn(() => 30);
     row = archive.get();
     expect(row).toBe(null);
   });

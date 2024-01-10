@@ -12,7 +12,7 @@
     "sourceMap": true,
     "skipLibCheck": true,
     "baseUrl": ".",
-    "types": ["jest"],
+    "types": ["vitest/globals"],
     "lib": ["esnext", "dom", "dom.iterable", "scripthost"],
     "paths": {
       "@jood/helpdesk-module/*": ["../packages/helpdesk-module/src/*"]

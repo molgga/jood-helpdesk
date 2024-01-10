@@ -1,7 +1,5 @@
 import { BrowserCookie } from '../BrowserCookie';
-/**
- * @jest-environment jsdom
- */
+
 describe('helpdesk-module: browser-cookie: BrowserCookie', () => {
   let cookie: BrowserCookie;
   const TEST_COOKIES = [

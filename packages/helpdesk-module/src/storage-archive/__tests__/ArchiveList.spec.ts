@@ -94,28 +94,28 @@ describe('helpdesk-module: storage-archive: ArchiveList', () => {
       max: 3,
       dataExpire: 50,
     });
-    archive.nowTime = jest.fn(() => 0);
+    archive.nowTime = vi.fn(() => 0);
     archive.push({ id: 1, name: '111' });
 
     let tempList = archive.getList();
     expect(tempList.length).toBe(1);
     expect(tempList[0].data).toEqual({ id: 1, name: '111' });
 
-    archive.nowTime = jest.fn(() => 30);
+    archive.nowTime = vi.fn(() => 30);
     archive.push({ id: 2, name: '222' });
     tempList = archive.getList();
     expect(tempList.length).toBe(2);
     expect(tempList[0].data).toEqual({ id: 1, name: '111' });
     expect(tempList[1].data).toEqual({ id: 2, name: '222' });
 
-    archive.nowTime = jest.fn(() => 60);
+    archive.nowTime = vi.fn(() => 60);
     archive.push({ id: 3, name: '333' });
     tempList = archive.getList();
     expect(tempList.length).toBe(2);
     expect(tempList[0].data).toEqual({ id: 2, name: '222' });
     expect(tempList[1].data).toEqual({ id: 3, name: '333' });
 
-    archive.nowTime = jest.fn(() => 110);
+    archive.nowTime = vi.fn(() => 110);
     tempList = archive.getList();
     expect(tempList.length).toBe(0);
   });
@@ -187,7 +187,7 @@ describe('helpdesk-module: storage-archive: ArchiveList', () => {
     let tempList = archive.getList();
     expect(tempList.length).toBe(0);
 
-    archive.nowTime = jest.fn(() => 0);
+    archive.nowTime = vi.fn(() => 0);
     archive.push({ id: 1, name: '111' });
     archive.push({ id: 2, name: '222' });
     archive.push({ id: 3, name: '333' });
@@ -198,7 +198,7 @@ describe('helpdesk-module: storage-archive: ArchiveList', () => {
     expect(tempList[1].data).toEqual({ id: 2, name: '222' });
     expect(tempList[2].data).toEqual({ id: 3, name: '333' });
 
-    archive.nowTime = jest.fn(() => 10);
+    archive.nowTime = vi.fn(() => 10);
     archive.push({ id: 1, name: '111-업데이트' });
     tempList = archive.getList();
     expect(tempList.length).toBe(3);
@@ -207,7 +207,7 @@ describe('helpdesk-module: storage-archive: ArchiveList', () => {
     expect(tempList[2].data).toEqual({ id: 1, name: '111-업데이트' });
     expect(tempList[0].expireAt < tempList[2].expireAt).toBe(true);
 
-    archive.nowTime = jest.fn(() => 20);
+    archive.nowTime = vi.fn(() => 20);
     archive.push({ id: 3, name: '333-업데이트' });
     tempList = archive.getList();
     expect(tempList.length).toBe(3);
@@ -216,7 +216,7 @@ describe('helpdesk-module: storage-archive: ArchiveList', () => {
     expect(tempList[2].data).toEqual({ id: 3, name: '333-업데이트' });
     expect(tempList[0].expireAt < tempList[2].expireAt).toBe(true);
 
-    archive.nowTime = jest.fn(() => 30);
+    archive.nowTime = vi.fn(() => 30);
     archive.push({ id: 4, name: '444' });
     tempList = archive.getList();
     expect(tempList.length).toBe(4);
@@ -240,7 +240,7 @@ describe('helpdesk-module: storage-archive: ArchiveList', () => {
     let tempList = archive.getList();
     expect(tempList.length).toBe(0);
 
-    archive.nowTime = jest.fn(() => 0);
+    archive.nowTime = vi.fn(() => 0);
     archive.unshift({ id: 1, name: '111' });
     archive.unshift({ id: 2, name: '222' });
     archive.unshift({ id: 3, name: '333' });
@@ -251,7 +251,7 @@ describe('helpdesk-module: storage-archive: ArchiveList', () => {
     expect(tempList[1].data).toEqual({ id: 2, name: '222' });
     expect(tempList[2].data).toEqual({ id: 1, name: '111' });
 
-    archive.nowTime = jest.fn(() => 10);
+    archive.nowTime = vi.fn(() => 10);
     archive.unshift({ id: 1, name: '111-업데이트' });
     tempList = archive.getList();
     expect(tempList.length).toBe(3);
@@ -260,7 +260,7 @@ describe('helpdesk-module: storage-archive: ArchiveList', () => {
     expect(tempList[2].data).toEqual({ id: 2, name: '222' });
     expect(tempList[2].expireAt < tempList[0].expireAt).toBe(true);
 
-    archive.nowTime = jest.fn(() => 20);
+    archive.nowTime = vi.fn(() => 20);
     archive.unshift({ id: 3, name: '333-업데이트' });
     tempList = archive.getList();
     expect(tempList.length).toBe(3);
@@ -269,7 +269,7 @@ describe('helpdesk-module: storage-archive: ArchiveList', () => {
     expect(tempList[2].data).toEqual({ id: 2, name: '222' });
     expect(tempList[2].expireAt < tempList[0].expireAt).toBe(true);
 
-    archive.nowTime = jest.fn(() => 30);
+    archive.nowTime = vi.fn(() => 30);
     archive.unshift({ id: 4, name: '444' });
     tempList = archive.getList();
     expect(tempList.length).toBe(4);

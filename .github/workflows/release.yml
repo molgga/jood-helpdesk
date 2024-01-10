@@ -24,7 +24,7 @@ jobs:
           yarn run docs:build
 
       - name: Test packages
-        run: yarn run package:unit
+        run: yarn run package:test
 
   # Github page
   document-pub:

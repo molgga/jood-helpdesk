@@ -3,12 +3,12 @@ import { TTLCache } from "../TTLCache";
 describe("TTLCache", () => {
   let ttlCache: TTLCache;
   beforeEach(() => {
-    jest.useFakeTimers();
+    vi.useFakeTimers();
     ttlCache = new TTLCache();
     ttlCache.expireNotifyDeplay =  0;
   });
   afterEach(() => {
-    jest.useRealTimers();
+    vi.useRealTimers();
     ttlCache.destroy();
   });
 
@@ -29,7 +29,7 @@ describe("TTLCache", () => {
     expect(ttlCache.expired("A")).toBe(true);
     expect(ttlCache.expired("B")).toBe(false);
     expect(ttlCache.expired("C")).toBe(false);
-    jest.advanceTimersByTime(150);
+    vi.advanceTimersByTime(150);
     expect(ttlCache.expired("A")).toBe(true);
     expect(ttlCache.expired("B")).toBe(true);
     expect(ttlCache.expired("C")).toBe(false);
@@ -52,7 +52,7 @@ describe("TTLCache", () => {
     expect(ttlCache.get("A")).toBe(undefined);
     expect(ttlCache.get("B")).toBe("myValue2");
     expect(ttlCache.get("C")).toBe("myValue3");
-    jest.advanceTimersByTime(150); 
+    vi.advanceTimersByTime(150); 
     expect(ttlCache.get("A")).toBe(undefined);
     expect(ttlCache.get("B")).toBe(undefined);
     expect(ttlCache.get("C")).toBe("myValue3");
@@ -75,7 +75,7 @@ describe("TTLCache", () => {
     expect(ttlCache.has("A")).toBe(false);
     expect(ttlCache.has("B")).toBe(true);
     expect(ttlCache.has("C")).toBe(true);
-    jest.advanceTimersByTime(150); 
+    vi.advanceTimersByTime(150); 
     expect(ttlCache.has("A")).toBe(false);
     expect(ttlCache.has("B")).toBe(false);
     expect(ttlCache.has("C")).toBe(true);
@@ -99,14 +99,14 @@ describe("TTLCache", () => {
   it("존재하는 key 를 다시 set 하는 경우 갱신 되어야 합니다.", () => {
     ttlCache.set("A", "myValue1", 100);
     expect(ttlCache.getKeys().length).toBe(1);
-    jest.advanceTimersByTime(150); 
+    vi.advanceTimersByTime(150); 
     expect(ttlCache.getKeys().length).toBe(0);
     ttlCache.set("A", "myValue1", 100);
     expect(ttlCache.getKeys().length).toBe(1);
-    jest.advanceTimersByTime(50); 
+    vi.advanceTimersByTime(50); 
     ttlCache.set("A", "myValue1", 100);
     expect(ttlCache.getKeys().length).toBe(1);
-    jest.advanceTimersByTime(150); 
+    vi.advanceTimersByTime(150); 
     expect(ttlCache.getKeys().length).toBe(0);
   });
 
@@ -133,7 +133,7 @@ describe("TTLCache", () => {
     ttlCache.set("B", "myValue2", 100);
     ttlCache.set("C", "myValue3", 200);
     expect(ttlCache.toJson()).toEqual({ B: "myValue2", C: "myValue3" });
-    jest.advanceTimersByTime(150); 
+    vi.advanceTimersByTime(150); 
     expect(ttlCache.toJson()).toEqual({ C: "myValue3" });
   });
 

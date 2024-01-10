@@ -16,7 +16,7 @@
     "build": "rollup -c",
     "build:watch": "rollup -c -w",
     "build:clear": "rm -rf ./dist",
-    "test:unit": "jest"
+    "test:run": "vitest run"
   },
   "dependencies": {},
   "devDependencies": {},

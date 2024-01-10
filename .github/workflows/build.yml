@@ -23,7 +23,7 @@ jobs:
         run: yarn run package:build
 
       - name: Test packages
-        run: yarn run package:unit
+        run: yarn run package:test
 
       # docs
       - name: Build document

@@ -16,7 +16,7 @@
     "sourceMap": true,
     "noImplicitAny": false,
     "baseUrl": ".",
-    "types": ["jest"],
+    "types": ["vitest/globals"],
     "paths": {
       "@jood/helpdesk-array": ["./helpdesk-array/src/index"],
       "@jood/helpdesk-color": ["./helpdesk-color/src/index"],
