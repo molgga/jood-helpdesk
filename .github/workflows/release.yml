@@ -65,55 +65,55 @@ jobs:
           yarn run package:build
 
       - name: NPM publish array
-        if: ${{ always() && startsWith(github.ref, 'refs/tags/array')) }}
+        if: ${{ always() && startsWith(github.ref, 'refs/tags/array') }}
         run: npm publish ./packages/helpdesk-array
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
 
       - name: NPM publish color
-        if: ${{ always() && startsWith(github.ref, 'refs/tags/color')) }}
+        if: ${{ always() && startsWith(github.ref, 'refs/tags/color') }}
         run: npm publish ./packages/helpdesk-color
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
 
       - name: NPM publish core
-        if: ${{ always() && startsWith(github.ref, 'refs/tags/core')) }}
+        if: ${{ always() && startsWith(github.ref, 'refs/tags/core') }}
         run: npm publish ./packages/helpdesk-core
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
 
       - name: NPM publish date
-        if: ${{ always() && startsWith(github.ref, 'refs/tags/date')) }}
+        if: ${{ always() && startsWith(github.ref, 'refs/tags/date') }}
         run: npm publish ./packages/helpdesk-date
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
 
       - name: NPM publish functional
-        if: ${{ always() && startsWith(github.ref, 'refs/tags/functional')) }}
+        if: ${{ always() && startsWith(github.ref, 'refs/tags/functional') }}
         run: npm publish ./packages/helpdesk-functional
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
 
       - name: NPM publish module
-        if: ${{ always() && startsWith(github.ref, 'refs/tags/module')) }}
+        if: ${{ always() && startsWith(github.ref, 'refs/tags/module') }}
         run: npm publish ./packages/helpdesk-module
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
 
       - name: NPM publish number
-        if: ${{ always() && startsWith(github.ref, 'refs/tags/number')) }}
+        if: ${{ always() && startsWith(github.ref, 'refs/tags/number') }}
         run: npm publish ./packages/helpdesk-number
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
 
       - name: NPM publish point
-        if: ${{ always() && startsWith(github.ref, 'refs/tags/point')) }}
+        if: ${{ always() && startsWith(github.ref, 'refs/tags/point') }}
         run: npm publish ./packages/helpdesk-point
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
 
       - name: NPM publish string
-        if: ${{ always() && startsWith(github.ref, 'refs/tags/string')) }}
+        if: ${{ always() && startsWith(github.ref, 'refs/tags/string') }}
         run: npm publish ./packages/helpdesk-string
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
