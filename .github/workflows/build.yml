@@ -2,9 +2,9 @@ name: Build & Docs
 
 on:
   pull_request:
-    branches: [test] # [main]
+    branches: [main]
   push:
-    branches: [test] # [main]
+    branches: [main]
 
 jobs:
   build:
