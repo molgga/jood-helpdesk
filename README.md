@@ -1,5 +1,12 @@
 # jood-helpdesk
 
-짬짬히 진행중 😁
+[Document](https://molgga.github.io/jood-helpdesk)
 
-https://molgga.github.io/jood-helpdesk
+ - `@jood/helpdesk-array`
+ - `@jood/helpdesk-color`
+ - `@jood/helpdesk-date`
+ - `@jood/helpdesk-functional`
+ - `@jood/helpdesk-module`
+ - `@jood/helpdesk-number`
+ - `@jood/helpdesk-point`
+ - `@jood/helpdesk-string`
