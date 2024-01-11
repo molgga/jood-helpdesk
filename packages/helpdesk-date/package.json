@@ -1,6 +1,6 @@
 {
   "name": "@jood/helpdesk-date",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
@@ -19,7 +19,7 @@
     "test:run": "vitest run"
   },
   "dependencies": {
-    "@jood/helpdesk-core": "*"
+    "@jood/helpdesk-core": "^0.0.1"
   },
   "devDependencies": {},
   "repository": {

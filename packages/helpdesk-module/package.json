@@ -1,6 +1,6 @@
 {
   "name": "@jood/helpdesk-module",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "exports": {
     "./browser-cookie": {
       "require": "./dist/browser-cookie/index.js",
@@ -86,8 +86,8 @@
     "test:run": "vitest run"
   },
   "dependencies": {
-    "rxjs": "*",
-    "@jood/helpdesk-functional": "*"
+    "rxjs": "^7.0.0",
+    "@jood/helpdesk-functional": "^0.0.1"
   },
   "devDependencies": {},
   "repository": {
