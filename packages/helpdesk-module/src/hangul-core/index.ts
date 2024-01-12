@@ -1,3 +1,5 @@
 export * from './types';
-export * from './character';
-export * from './typing';
+export * from './characterToken';
+export * from './characterMatrix';
+export * from './typingToken';
+export * from './typingMatrix';
