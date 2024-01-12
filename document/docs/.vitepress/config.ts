@@ -86,7 +86,14 @@ const sidebar = [
       },
       {
         text: 'hangul-core',
-        items: [{ text: '한글', link: '/module/hangul-core/index' }],
+        items: [
+          { text: 'characterToken', link: '/module/hangul-core/characterToken' },
+          { text: 'characterMatrixt', link: '/module/hangul-core/characterMatrixt' },
+          { text: 'typingToken', link: '/module/hangul-core/typingToken' },
+          { text: 'typingMatrix', link: '/module/hangul-core/typingMatrix' },
+          { text: 'initialExtract', link: '/module/hangul-core/initialExtract' },
+          { text: 'initialIncludes', link: '/module/hangul-core/initialIncludes' },
+        ],
       },
       {
         text: 'hangul-typist',
