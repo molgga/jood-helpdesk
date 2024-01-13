@@ -13,7 +13,6 @@ export const inputFormatterPhone = () => {
     const comareLen2 = hasDash ? 12 : 10;
     const isReg13 = comareLen1 <= safeValue.length && (prevValue === undefined || comareLen2 <= prevValue?.length);
     const regDash = isReg13 ? /(\d{0,3})(\d{0,4})(\d{0,4})/ : /(\d{0,3})(\d{0,3})(\d{0,4})/;
-    console.log(isReg13);
     let result = safeValue
       .replace(/[^0-9]/g, '')
       .replace(regDash, '$1-$2-$3')
