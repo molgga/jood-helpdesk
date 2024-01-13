@@ -1,0 +1,1 @@
+import{i as a}from"./isNumber.pnWU5ZW6.js";const c=(o,r)=>{const t=Math.floor((r-o)/1e3),e=Math.floor(t/60),n=Math.floor(e/60),s=Math.floor(n/24);return{second:t,minute:e,hour:n,day:s}},u=o=>{let r;if(a(o)){const t=Number(o);r=0<=t&&t<10?`0${t}`:o.toString()}else r=o;return r};export{u as a,c as t};
