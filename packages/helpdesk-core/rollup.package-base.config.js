@@ -1,6 +1,7 @@
 import dts from 'rollup-plugin-dts';
 import esbuild from 'rollup-plugin-esbuild';
 import del from 'rollup-plugin-delete';
+import strip from '@rollup/plugin-strip';
 
 export function createBundle(config) {
   return {
@@ -14,7 +15,7 @@ export function createPackaging() {
   const entryName = require('./package.json').main.replace(/\.js$/, '');
   return [
     createBundle({
-      plugins: [esbuild(), del({ targets: 'dist/*' })],
+      plugins: [esbuild(), strip(), del({ targets: 'dist/*' })],
       output: [
         { file: `${entryName}.js`, format: 'cjs', sourcemap: true },
         { file: `${entryName}.mjs`, format: 'es', sourcemap: true },
@@ -43,7 +44,7 @@ export function createSubmodulePackaging() {
     const value = entryExports[key];
     const entryModule = key.replace(/^\.\//, '');
     const entryName = value.require.replace(/\.js$/, '');
-    const plugins = [esbuild()];
+    const plugins = [esbuild(), strip()];
     if (i === 0) {
       plugins.push(del({ targets: 'dist/*' }));
     }

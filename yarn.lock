@@ -377,6 +377,23 @@
   dependencies:
     "@sinclair/typebox" "^0.27.8"
 
+"@jood/helpdesk-core@^0.0.1":
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/@jood/helpdesk-core/-/helpdesk-core-0.0.1.tgz#423008a27c71118568f372dbd3aa628e28dc87e2"
+  integrity sha512-OaNHL6sBwzTTrczDgzR3tB28Au24SsKBo1Ndu9KYzVGM7E88odLI3H3Hp0CiYf7WsU9gNIJS+oyy1bo19B28gA==
+
+"@jood/helpdesk-functional@^0.0.1":
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/@jood/helpdesk-functional/-/helpdesk-functional-0.0.1.tgz#a9e5226d1f9354245b81715fa1aa1fe0c3136590"
+  integrity sha512-/R9xw93JWsuHlgCYDABKy5mLtPggFUoV1kFRDUdN1Y/WSVn/gvgXd0TWD9wUHkY6AF60Jxvl3Hyus+41EoFr1Q==
+
+"@jood/helpdesk-string@^0.0.1":
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/@jood/helpdesk-string/-/helpdesk-string-0.0.1.tgz#f07e8294f625a43d47ba8ae04aee2f16e1ea6ba8"
+  integrity sha512-stPp9FiURqgf/5Jt5P00MICwvJGdtp1L51wZU+fAvpMzcdetMrMk3L0qVpPkOrnO2kzfVzbsJHUZ6OiWrkqyfw==
+  dependencies:
+    "@jood/helpdesk-core" "*"
+
 "@jridgewell/gen-mapping@^0.3.0":
   version "0.3.3"
   resolved "https://registry.yarnpkg.com/@jridgewell/gen-mapping/-/gen-mapping-0.3.3.tgz#7e02e6eb5df901aaedb08514203b096614024098"
@@ -440,6 +457,15 @@
   resolved "https://registry.yarnpkg.com/@sxzz/popperjs-es/-/popperjs-es-2.11.7.tgz#a7f69e3665d3da9b115f9e71671dae1b97e13671"
   integrity sha512-Ccy0NlLkzr0Ex2FKvh2X+OyERHXJ88XJ1MXtsI9y9fGexlaXaVTPzBCRBwIxFkORuOb+uBqeu+RqnpgYTEZRUQ==
 
+"@rollup/plugin-strip@^3.0.4":
+  version "3.0.4"
+  resolved "https://registry.yarnpkg.com/@rollup/plugin-strip/-/plugin-strip-3.0.4.tgz#ad623cc18cf305b484f8bf38fde4ae855c1229e4"
+  integrity sha512-LDRV49ZaavxUo2YoKKMQjCxzCxugu1rCPQa0lDYBOWLj6vtzBMr8DcoJjsmg+s450RbKbe3qI9ZLaSO+O1oNbg==
+  dependencies:
+    "@rollup/pluginutils" "^5.0.1"
+    estree-walker "^2.0.2"
+    magic-string "^0.30.3"
+
 "@rollup/plugin-typescript@^8.3.4":
   version "8.5.0"
   resolved "https://registry.yarnpkg.com/@rollup/plugin-typescript/-/plugin-typescript-8.5.0.tgz#7ea11599a15b0a30fa7ea69ce3b791d41b862515"
@@ -464,6 +490,15 @@
   dependencies:
     estree-walker "^2.0.1"
     picomatch "^2.2.2"
+
+"@rollup/pluginutils@^5.0.1":
+  version "5.1.0"
+  resolved "https://registry.yarnpkg.com/@rollup/pluginutils/-/pluginutils-5.1.0.tgz#7e53eddc8c7f483a4ad0b94afb1f7f5fd3c771e0"
+  integrity sha512-XTIWOPPcpvyKI6L1NHo0lFlCyznUEyPmPY1mc3KpPVDYulHSTvyeLNVW00QTLIAFNhR3kYnJTQHeGqU4M3n09g==
+  dependencies:
+    "@types/estree" "^1.0.0"
+    estree-walker "^2.0.2"
+    picomatch "^2.3.1"
 
 "@rollup/rollup-android-arm-eabi@4.9.3":
   version "4.9.3"
@@ -2018,7 +2053,7 @@ magic-string@^0.26.6:
   dependencies:
     sourcemap-codec "^1.4.8"
 
-magic-string@^0.30.5:
+magic-string@^0.30.3, magic-string@^0.30.5:
   version "0.30.5"
   resolved "https://registry.yarnpkg.com/magic-string/-/magic-string-0.30.5.tgz#1994d980bd1c8835dc6e78db7cbd4ae4f24746f9"
   integrity sha512-7xlpfBaQaP/T6Vh8MO/EqXSW5En6INHEvEXQiuff7Gku0PWjU3uf6w/j9o7O+SpB5fOAkrI5HeoNgwjEO0pFsA==
@@ -2448,7 +2483,7 @@ run-parallel@^1.1.9:
   dependencies:
     queue-microtask "^1.2.2"
 
-rxjs@*:
+rxjs@^7.0.0:
   version "7.8.1"
   resolved "https://registry.yarnpkg.com/rxjs/-/rxjs-7.8.1.tgz#6f6f3d99ea8044291efd92e7c7fcf562c4057543"
   integrity sha512-AA3TVj+0A2iuIoQkWEK/tqFjBq2j+6PO6Y0zJcvzLAFhEFIO3HL0vls9hWLncZbAAbK0mar7oZ4V079I/qPMxg==
