@@ -1,6 +1,6 @@
 {
   "name": "@jood/helpdesk-module",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "exports": {
     "./browser-cookie": {
       "require": "./dist/browser-cookie/index.js",
@@ -21,6 +21,11 @@
       "require": "./dist/hangul-typist/index.js",
       "import": "./dist/hangul-typist/index.mjs",
       "types": "./dist/hangul-typist/index.d.ts"
+    },
+    "./input-formatter": {
+      "require": "./dist/input-formatter/index.js",
+      "import": "./dist/input-formatter/index.mjs",
+      "types": "./dist/input-formatter/index.d.ts"
     },
     "./storage-archive": {
       "require": "./dist/storage-archive/index.js",
@@ -57,6 +62,9 @@
       "hangul-typist": [
         "dist/hangul-typist/index.d.ts"
       ],
+      "input-formatter": [
+        "dist/input-formatter/index.d.ts"
+      ],
       "storage-archive": [
         "dist/storage-archive/index.d.ts"
       ],
@@ -87,7 +95,8 @@
   },
   "dependencies": {
     "rxjs": "^7.0.0",
-    "@jood/helpdesk-functional": "^0.0.1"
+    "@jood/helpdesk-functional": "^0.0.1",
+    "@jood/helpdesk-string": "^0.0.1"
   },
   "devDependencies": {},
   "repository": {

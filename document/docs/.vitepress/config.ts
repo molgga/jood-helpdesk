@@ -99,6 +99,13 @@ const sidebar = [
         text: 'hangul-typist',
         items: [{ text: '한글 타이핑 애니메이션', link: '/module/hangul-typist/index' }],
       },
+      {
+        text: 'input-formatter',
+        items: [
+          { text: 'input 가격 입력 포맷터', link: '/module/input-formatter/inputFormatterKrw' },
+          { text: 'input 핸드폰 입력 포맷터', link: '/module/input-formatter/inputFormatterPhone' },
+        ],
+      },
     ],
   },
   {
