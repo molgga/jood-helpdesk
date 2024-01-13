@@ -104,6 +104,8 @@ const sidebar = [
         items: [
           { text: 'input 가격 입력 포맷터', link: '/module/input-formatter/inputFormatterKrw' },
           { text: 'input 핸드폰 입력 포맷터', link: '/module/input-formatter/inputFormatterPhone' },
+          { text: 'input 숫자만 입력 포맷터', link: '/module/input-formatter/inputFormatterInteger' },
+          { text: 'input 소수점 입력 포맷터', link: '/module/input-formatter/inputFormatterDecimal' },
         ],
       },
     ],
