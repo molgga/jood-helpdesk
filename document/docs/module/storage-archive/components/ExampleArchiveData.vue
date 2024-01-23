@@ -11,7 +11,7 @@
 </template>
 
 <script setup lang="ts">
-import { reactive } from 'vue';
+import { onMounted, reactive } from 'vue';
 import { ArchiveData } from '@jood/helpdesk-module/storage-archive';
 
 interface MyData {
@@ -26,11 +26,7 @@ const state = reactive({
   savedAt: 0,
 });
 
-const archive = new ArchiveData<MyData>(window.localStorage);
-archive.init({
-  key: 'my-storage-key', // 저장키
-  dataExpire: 1000 * 3, // 3초
-});
+let archive: ArchiveData<MyData>;
 
 const save = () => {
   archive.set({
@@ -59,7 +55,14 @@ const updateMyState = () => {
   state.savedAt = savedAt;
 };
 
-expired();
+onMounted(() => {
+  archive = new ArchiveData<MyData>(typeof window !== 'undefined' ? window.localStorage : null);
+  archive.init({
+    key: 'my-storage-key', // 저장키
+    dataExpire: 1000 * 3, // 3초
+  });
+  expired();
+});
 </script>
 
 <style lang="scss" scoped></style>

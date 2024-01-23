@@ -17,7 +17,7 @@
 </template>
 
 <script setup lang="ts">
-import { reactive } from 'vue';
+import { onMounted, reactive } from 'vue';
 import { ArchiveList } from '@jood/helpdesk-module/storage-archive';
 import { ArchiveExistProcessType } from '@jood/helpdesk-module/storage-archive/types';
 
@@ -30,19 +30,7 @@ const state = reactive({
   list: [],
 });
 
-const archive = new ArchiveList<MyData>(window.localStorage);
-archive.init({
-  key: 'my-storage-key',
-  dataExpire: 1000 * 60 * 3, // 3분
-  max: 3, // 최대 3개
-  existProcessType: ArchiveExistProcessType.UPDATE, // 중복 데이터인 경우 expire 업데이트
-  findExist: (target, existList) => {
-    // 중복 체크는 직접.
-    return existList.findIndex((exist) => {
-      return target.keyword === exist.data.keyword;
-    });
-  },
-});
+let archive: ArchiveList<MyData>;
 
 const save = () => {
   if (!state.addKeyword) return;
@@ -68,7 +56,22 @@ const updateMyState = () => {
   state.list = archive.getList().map((row) => row.data);
 };
 
-expired();
+onMounted(() => {
+  archive = new ArchiveList<MyData>(window.localStorage);
+  archive.init({
+    key: 'my-storage-key',
+    dataExpire: 1000 * 60 * 3, // 3분
+    max: 3, // 최대 3개
+    existProcessType: ArchiveExistProcessType.UPDATE, // 중복 데이터인 경우 expire 업데이트
+    findExist: (target, existList) => {
+      // 중복 체크는 직접.
+      return existList.findIndex((exist) => {
+        return target.keyword === exist.data.keyword;
+      });
+    },
+  });
+  expired();
+});
 </script>
 
 <style lang="scss" scoped>
