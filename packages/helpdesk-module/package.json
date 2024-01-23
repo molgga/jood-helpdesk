@@ -1,6 +1,6 @@
 {
   "name": "@jood/helpdesk-module",
-  "version": "0.0.11",
+  "version": "0.0.12",
   "exports": {
     "./browser-cookie": {
       "require": "./dist/browser-cookie/index.js",

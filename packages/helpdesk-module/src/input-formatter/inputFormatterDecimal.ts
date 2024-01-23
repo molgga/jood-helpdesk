@@ -30,16 +30,15 @@ export const inputFormatterDecimal = (options?: { max: number }) => {
     } else {
       refine.push(...dots);
     }
-    let calc: any = refine.join('.');
+    let calc: string = refine.join('.');
     if (0 < options?.max) {
-      const hasLastDot = /\.$/.test(calc);
-      calc = Number(calc);
-      calc = Math.min(options.max, calc);
-      if (hasLastDot) {
-        calc = calc + '.';
+      const lastDot = /(\.[0]*)$/.exec(calc);
+      calc = Math.min(options.max, Number(calc)).toString();
+      if (0 < lastDot?.length) {
+        calc = calc + lastDot[0];
       }
     }
-    return calc.toString();
+    return calc;
   });
 
   return {
