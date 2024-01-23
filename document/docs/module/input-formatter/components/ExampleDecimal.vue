@@ -1,29 +1,35 @@
 <template>
   <div>
     <input
+      ref="refInput"
       class="my-input"
       inputmode="numeric"
       maxlength="13"
-      :value="formmater.getValue()"
-      @keydown="formmater.handleKeydown"
-      @input="formmater.handleInput"
+      :value="formatter.getValue()"
+      @keydown="formatter.handleKeydown"
+      @input="formatter.handleInput"
     />
     <div>{{ state }}</div>
   </div>
 </template>
 
 <script lang="ts" setup>
-import { reactive } from 'vue';
+import { onMounted, reactive, shallowRef } from 'vue';
 import { inputFormatterDecimal } from '@jood/helpdesk-module/input-formatter';
 
+const refInput = shallowRef<HTMLInputElement>(null);
 const state = reactive({
   myValue: '',
 });
 
-const formmater = inputFormatterDecimal({ max: 100 });
-formmater.setValue(state.myValue);
-formmater.onUpdated((value) => {
-  state.myValue = value;
+const formatter = inputFormatterDecimal({ max: 100 });
+
+onMounted(() => {
+  formatter.setElement(refInput.value);
+  formatter.setValue(state.myValue);
+  formatter.onUpdated((value) => {
+    state.myValue = value;
+  });
 });
 </script>
 

@@ -4,26 +4,31 @@
       class="my-input"
       inputmode="numeric"
       maxlength="13"
-      :value="formmater.getValue()"
-      @keydown="formmater.handleKeydown"
-      @input="formmater.handleInput"
+      :value="formatter.getValue()"
+      @keydown="formatter.handleKeydown"
+      @input="formatter.handleInput"
     />
     <div>{{ state }}</div>
   </div>
 </template>
 
 <script lang="ts" setup>
-import { reactive } from 'vue';
+import { onMounted, reactive, shallowRef } from 'vue';
 import { inputFormatterPhone } from '@jood/helpdesk-module/input-formatter';
 
+const refInput = shallowRef<HTMLInputElement>(null);
 const state = reactive({
-  myPhone: '',
+  myValue: '',
 });
 
-const formmater = inputFormatterPhone();
-formmater.setValue(state.myPhone);
-formmater.onUpdated((value) => {
-  state.myPhone = value;
+const formatter = inputFormatterPhone();
+
+onMounted(() => {
+  formatter.setElement(refInput.value);
+  formatter.setValue(state.myValue);
+  formatter.onUpdated((value) => {
+    state.myValue = value;
+  });
 });
 </script>
 

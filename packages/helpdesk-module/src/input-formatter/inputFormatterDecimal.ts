@@ -4,7 +4,7 @@ import { createInputFormatter } from './createInputFormatter';
  * input 소수점 표기 포맷터
  */
 export const inputFormatterDecimal = (options?: { max: number }) => {
-  const { setFormatter, getValue, setValue, handleKeydown, handleInput, toNumber, onUpdated } = createInputFormatter({});
+  const { setFormatter, setElement, getValue, setValue, handleKeydown, handleInput, toNumber, onUpdated } = createInputFormatter({});
 
   setFormatter((value) => {
     const safeValue = (value || '').replace(/[^0-9\.]/g, '');
@@ -45,6 +45,7 @@ export const inputFormatterDecimal = (options?: { max: number }) => {
   return {
     getValue,
     setValue,
+    setElement,
     handleKeydown,
     handleInput,
     toNumber,

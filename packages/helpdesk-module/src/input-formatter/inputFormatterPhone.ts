@@ -4,7 +4,7 @@ import { createInputFormatter } from './createInputFormatter';
  * input (한국)핸드폰 번호 표기 포맷터
  */
 export const inputFormatterPhone = () => {
-  const { setFormatter, getValue, setValue, handleKeydown, handleInput, onUpdated } = createInputFormatter({});
+  const { setFormatter, setElement, getValue, setValue, handleKeydown, handleInput, onUpdated } = createInputFormatter({});
 
   setFormatter((value, prevValue) => {
     const safeValue = value || '';
@@ -25,6 +25,7 @@ export const inputFormatterPhone = () => {
   return {
     getValue,
     setValue,
+    setElement,
     handleKeydown,
     handleInput,
     onUpdated,

@@ -4,7 +4,7 @@ import { createInputFormatter } from './createInputFormatter';
  * input 숫자만 표기 포맷터
  */
 export const inputFormatterInteger = (options?: { max: number }) => {
-  const { setFormatter, getValue, setValue, handleKeydown, handleInput, toNumber, onUpdated } = createInputFormatter({});
+  const { setFormatter, setElement, getValue, setValue, handleKeydown, handleInput, toNumber, onUpdated } = createInputFormatter({});
 
   setFormatter((value) => {
     const safeValue = (value || '').replace(/[^0-9]/g, '');
@@ -18,6 +18,7 @@ export const inputFormatterInteger = (options?: { max: number }) => {
   return {
     getValue,
     setValue,
+    setElement,
     handleKeydown,
     handleInput,
     toNumber,

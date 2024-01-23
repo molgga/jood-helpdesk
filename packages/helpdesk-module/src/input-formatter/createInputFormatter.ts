@@ -17,6 +17,7 @@ export const createInputFormatter = (config: FormatterConfig) => {
     downKey: '',
   };
 
+  let targetInput: HTMLInputElement = null;
   let fnFormatter: FnFormatter = () => '';
   let fnUpldated: FnHandleUpdated = () => {};
 
@@ -32,8 +33,32 @@ export const createInputFormatter = (config: FormatterConfig) => {
     return state.value;
   };
 
-  const setValue = (value: string) => {
-    state.value = fnFormatter(value || '');
+  const setValue = (value: string, prevFormatValue?: string) => {
+    const prevValue = targetInput?.value || '';
+    const caret = targetInput?.selectionStart || 0;
+    const formatValue = fnFormatter(value || '', prevFormatValue);
+    const isNotChanged = prevFormatValue === formatValue;
+    state.value = formatValue;
+    if (targetInput) {
+      targetInput.value = formatValue;
+    }
+
+    let moveCaret = Math.max(caretMoveMinPosition, caret + (formatValue.length - prevValue.length));
+    if (isNotChanged) {
+      if (state.downKey === 'Backspace') {
+        moveCaret = Math.max(0, moveCaret - 1);
+      }
+    }
+    if (typeof requestAnimationFrame !== 'undefined') {
+      requestAnimationFrame(() => {
+        targetInput?.setSelectionRange(moveCaret, moveCaret);
+        executeUpdated();
+      });
+    }
+  };
+
+  const setElement = (element: HTMLInputElement) => {
+    targetInput = element;
   };
 
   const setFormatter = (formatter: FnFormatter) => {
@@ -50,26 +75,11 @@ export const createInputFormatter = (config: FormatterConfig) => {
 
   const handleInput = (evt: Event) => {
     const target = evt.target as HTMLInputElement;
-    const caret = target.selectionStart;
-    const prevValue = target.value;
-    const prevFormatValue = state.value;
-    const formatValue = fnFormatter(target.value, prevFormatValue);
-    const isNotChanged = prevFormatValue === formatValue;
-    state.value = formatValue;
-    target.value = formatValue;
-    let moveCaret = Math.max(caretMoveMinPosition, caret + (formatValue.length - prevValue.length));
-    if (isNotChanged) {
-      if (state.downKey === 'Backspace') {
-        moveCaret = Math.max(0, moveCaret - 1);
-      }
-    }
-    requestAnimationFrame(() => {
-      target.setSelectionRange(moveCaret, moveCaret);
-      executeUpdated();
-    });
+    setValue(target.value, state.value);
   };
 
   return {
+    setElement,
     getValue,
     setValue,
     setFormatter,
