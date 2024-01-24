@@ -2,6 +2,8 @@ export * from './availableOr';
 export * from './distinct';
 export * from './extract';
 export * from './insert';
+export * from './scatterRange';
+export * from './scatterRangeBySource';
 export * from './shuffle';
 export * from './tail';
 export * from './toNumbersByComma';
