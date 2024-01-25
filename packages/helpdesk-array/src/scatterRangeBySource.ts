@@ -26,7 +26,7 @@ export const scatterRangeBySource = (config: { source: number[]; split: number }
   const sourceCopy: number[] = [...source];
   vRange.forEach((range, i) => {
     const count = sourceCopy.filter((v) => range[0] <= v && v < range[1]).length;
-    vSeries.push([range[0], count]);
+    vSeries.push([i, count]);
   });
   return {
     min,

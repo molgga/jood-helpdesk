@@ -63,17 +63,17 @@ describe('helpdesk-array: scatterRange', () => {
       max: 200,
       split: 11
     });
-    expect(result.series[0][0]).toBe(100);
-    expect(result.series[1][0]).toBe(110);
-    expect(result.series[2][0]).toBe(120);
-    expect(result.series[3][0]).toBe(130);
-    expect(result.series[4][0]).toBe(140);
-    expect(result.series[5][0]).toBe(150);
-    expect(result.series[6][0]).toBe(160);
-    expect(result.series[7][0]).toBe(170);
-    expect(result.series[8][0]).toBe(180);
-    expect(result.series[9][0]).toBe(190);
-    expect(result.series[10][0]).toBe(200);
+    expect(result.series[0][0]).toBe(0);
+    expect(result.series[1][0]).toBe(1);
+    expect(result.series[2][0]).toBe(2);
+    expect(result.series[3][0]).toBe(3);
+    expect(result.series[4][0]).toBe(4);
+    expect(result.series[5][0]).toBe(5);
+    expect(result.series[6][0]).toBe(6);
+    expect(result.series[7][0]).toBe(7);
+    expect(result.series[8][0]).toBe(8);
+    expect(result.series[9][0]).toBe(9);
+    expect(result.series[10][0]).toBe(10);
   });
 
   it('series 는 2차 배열로 반환하고, 각 원소의 두번째 원소는 source 가 포함되는 범위가 카운트 되어야 합니다.', () => {

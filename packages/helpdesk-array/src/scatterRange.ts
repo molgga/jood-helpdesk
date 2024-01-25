@@ -30,7 +30,7 @@ export const scatterRange = (config: { source: number[]; min: number; max: numbe
     const rmin = i === 0 ? 0 : range[0]; // 맨 앞은 0 부터
     const rmax = range[1];
     const count = sourceCopy.filter((v) => rmin <= v && v < rmax).length;
-    vSeries.push([range[0], count]);
+    vSeries.push([i, count]);
   });
   return {
     min,

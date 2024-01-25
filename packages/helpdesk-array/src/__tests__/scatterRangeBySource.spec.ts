@@ -37,11 +37,11 @@ describe('helpdesk-array: scatterRangeBySource', () => {
       source: [130, 128, 131, 134, 142, 150, 149, 147, 143],
       split: 5
     });
-    expect(result.series[0][0]).toBe(128);
-    expect(result.series[1][0]).toBe(134);
-    expect(result.series[2][0]).toBe(140);
-    expect(result.series[3][0]).toBe(146);
-    expect(result.series[4][0]).toBe(152);
+    expect(result.series[0][0]).toBe(0);
+    expect(result.series[1][0]).toBe(1);
+    expect(result.series[2][0]).toBe(2);
+    expect(result.series[3][0]).toBe(3);
+    expect(result.series[4][0]).toBe(4);
   });
 
   it('series 는 2차 배열로 반환하고, 각 원소의 두번째 원소는 source 가 포함되는 범위가 카운트 되어야 합니다.', () => {
