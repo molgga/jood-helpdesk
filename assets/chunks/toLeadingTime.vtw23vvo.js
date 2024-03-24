@@ -1,0 +1,1 @@
+const s=(t,o)=>{const n=Math.floor((o-t)/1e3),r=Math.floor(n/60),a=Math.floor(r/60),e=Math.floor(a/24);return{second:n,minute:r,hour:a,day:e}},c=(t,o=2)=>t.toString().padStart(o,"0");export{c as a,s as t};
