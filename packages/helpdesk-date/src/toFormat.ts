@@ -36,6 +36,7 @@ export const toFormat = (at: number | string, options: DateFormatOption = {}): s
     const dtHourA = dtHour < 13 ? dtHour : dtHour - 12;
     const dtMinute = date.getMinutes();
     const dtSecond = date.getSeconds();
+    const dtMillisecond = date.getMilliseconds();
     const dtAA = dtHour < 13 ? '오전' : '오후';
 
     dateStr = format;
@@ -53,6 +54,7 @@ export const toFormat = (at: number | string, options: DateFormatOption = {}): s
     }
     dateStr = dateStr.replace(/mm/, toLeadingTime(dtMinute));
     dateStr = dateStr.replace(/ss/, toLeadingTime(dtSecond));
+    dateStr = dateStr.replace(/ms/, toLeadingTime(dtMillisecond, 3));
   }
   return dateStr;
 };
