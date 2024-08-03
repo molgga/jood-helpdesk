@@ -8,7 +8,7 @@ const sidebar = [
     items: [{ text: '개요', link: '/index' }],
   },
   {
-    collapsed: true,
+    collapsed: false,
     text: '@jood/helpdesk-array',
     items: [
       { text: 'availableOr', link: '/array/availableOr' },
@@ -27,7 +27,7 @@ const sidebar = [
     ],
   },
   {
-    collapsed: true,
+    collapsed: false,
     text: '@jood/helpdesk-date',
     items: [
       { text: 'isDate', link: '/date/isDate' },
@@ -45,7 +45,7 @@ const sidebar = [
     ],
   },
   {
-    collapsed: true,
+    collapsed: false,
     text: '@jood/helpdesk-color',
     items: [
       { text: 'hexToRgb', link: '/color/hexToRgb' },
@@ -55,7 +55,7 @@ const sidebar = [
     ],
   },
   {
-    collapsed: true,
+    collapsed: false,
     text: '@jood/helpdesk-point',
     items: [
       { text: 'intersect', link: '/point/intersect' },
@@ -66,7 +66,7 @@ const sidebar = [
     ],
   },
   {
-    collapsed: true,
+    collapsed: false,
     text: '@jood/helpdesk-module',
     items: [
       {
@@ -95,7 +95,7 @@ const sidebar = [
         text: 'hangul-core',
         items: [
           { text: 'characterToken', link: '/module/hangul-core/characterToken' },
-          { text: 'characterMatrixt', link: '/module/hangul-core/characterMatrixt' },
+          { text: 'characterMatrix', link: '/module/hangul-core/characterMatrix' },
           { text: 'typingToken', link: '/module/hangul-core/typingToken' },
           { text: 'typingMatrix', link: '/module/hangul-core/typingMatrix' },
           { text: 'initialExtract', link: '/module/hangul-core/initialExtract' },
@@ -118,16 +118,17 @@ const sidebar = [
     ],
   },
   {
-    collapsed: true,
+    collapsed: false,
     text: '@jood/helpdesk-functional',
     items: [
       { text: 'debounce', link: '/functional/debounce' },
       { text: 'throttle', link: '/functional/throttle' },
       { text: 'delay', link: '/functional/delay' },
+      { text: 'deepFreeze', link: '/functional/deepFreeze' },
     ],
   },
   {
-    collapsed: true,
+    collapsed: false,
     text: '@jood/helpdesk-number',
     items: [
       { text: 'getRandomizer', link: '/number/getRandomizer' },
@@ -139,7 +140,7 @@ const sidebar = [
     ],
   },
   {
-    collapsed: true,
+    collapsed: false,
     text: '@jood/helpdesk-string',
     items: [
       { text: 'collapseMutiline', link: '/string/collapseMutiline' },

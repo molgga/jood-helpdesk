@@ -387,6 +387,11 @@
   resolved "https://registry.yarnpkg.com/@jood/helpdesk-functional/-/helpdesk-functional-0.0.1.tgz#a9e5226d1f9354245b81715fa1aa1fe0c3136590"
   integrity sha512-/R9xw93JWsuHlgCYDABKy5mLtPggFUoV1kFRDUdN1Y/WSVn/gvgXd0TWD9wUHkY6AF60Jxvl3Hyus+41EoFr1Q==
 
+"@jood/helpdesk-number@^0.0.1":
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/@jood/helpdesk-number/-/helpdesk-number-0.0.1.tgz#a97c409f9e1623b51c65b7806f6efa2686078267"
+  integrity sha512-y1zYy7KHma4TH0SIkGmFJkQXzx3Zq+MzsJENlikyiQ2RL58UV2VUhbHzrL2CoUF9ohxj+H1q+9eM9Sb+s5Hhzg==
+
 "@jood/helpdesk-string@^0.0.1":
   version "0.0.1"
   resolved "https://registry.yarnpkg.com/@jood/helpdesk-string/-/helpdesk-string-0.0.1.tgz#f07e8294f625a43d47ba8ae04aee2f16e1ea6ba8"
