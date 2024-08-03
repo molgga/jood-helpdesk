@@ -1,6 +1,6 @@
 {
   "name": "@jood/helpdesk-module",
-  "version": "0.0.12",
+  "version": "0.0.13",
   "exports": {
     "./browser-cookie": {
       "require": "./dist/browser-cookie/index.js",
@@ -26,6 +26,11 @@
       "require": "./dist/input-formatter/index.js",
       "import": "./dist/input-formatter/index.mjs",
       "types": "./dist/input-formatter/index.d.ts"
+    },
+    "./keycode": {
+      "require": "./dist/keycode/index.js",
+      "import": "./dist/keycode/index.mjs",
+      "types": "./dist/keycode/index.d.ts"
     },
     "./storage-archive": {
       "require": "./dist/storage-archive/index.js",
@@ -64,6 +69,9 @@
       ],
       "input-formatter": [
         "dist/input-formatter/index.d.ts"
+      ],
+      "keycode": [
+        "dist/keycode/index.d.ts"
       ],
       "storage-archive": [
         "dist/storage-archive/index.d.ts"
