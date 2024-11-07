@@ -11,9 +11,9 @@
   "scripts": {
     "bootstrap": "yarn run bootstrap:install && yarn run package:build",
     "bootstrap:install": "yarn install --production=false",
-    "package:build": "yarn run pg-core:build && run-p pg-color:build pg-date:build pg-number:build pg-string:build pg-array:build pg-point:build pg-functional:build pg-module:build",
-    "package:clear": "run-p pg-core:clear pg-color:clear pg-date:clear pg-number:clearpg-string:clear pg-array:clear pg-point:clear pg-functional:clear pg-module:clear",
-    "package:test": "run-p pg-core:run pg-color:run pg-date:run pg-number:run pg-string:run pg-array:run pg-point:run pg-functional:run pg-module:run",
+    "package:build": "yarn run pg-core:build && run-p pg-color:build pg-date:build pg-number:build pg-string:build pg-array:build pg-point:build pg-functional:build pg-module:build pg-types:build",
+    "package:clear": "run-p pg-core:clear pg-color:clear pg-date:clear pg-number:clearpg-string:clear pg-array:clear pg-point:clear pg-functional:clear pg-module:clear pg-types:clear",
+    "package:test": "run-p pg-core:run pg-color:run pg-date:run pg-number:run pg-string:run pg-array:run pg-point:run pg-functional:run pg-module:run pg-types:run",
     "package:deploy:ready": "yarn install --frozen-lockfile",
     "pg-array:build": "yarn workspace @jood/helpdesk-array build",
     "pg-array:clear": "yarn workspace @jood/helpdesk-array build:clear",
