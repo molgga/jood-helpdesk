@@ -118,3 +118,9 @@ jobs:
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
 
+      - name: NPM publish types
+        if: ${{ always() && startsWith(github.ref, 'refs/tags/types') }}
+        run: npm publish ./packages/helpdesk-types
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
+

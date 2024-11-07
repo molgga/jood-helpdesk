@@ -42,6 +42,9 @@
     "pg-string:build": "yarn workspace @jood/helpdesk-string build",
     "pg-string:clear": "yarn workspace @jood/helpdesk-string build:clear",
     "pg-string:run": "yarn workspace @jood/helpdesk-string test:run",
+    "pg-types:build": "yarn workspace @jood/helpdesk-types build",
+    "pg-types:clear": "yarn workspace @jood/helpdesk-types build:clear",
+    "pg-types:run": "yarn workspace @jood/helpdesk-types test:run",
     "docs:build": "yarn workspace document docs:build"
   },
   "keywords": [],
