@@ -18,9 +18,7 @@
     "build:clear": "rm -rf ./dist",
     "test:run": "vitest run"
   },
-  "dependencies": {
-    "@jood/helpdesk-core": "^0.0.1"
-  },
+  "dependencies": {},
   "devDependencies": {},
   "repository": {
     "type": "git",
