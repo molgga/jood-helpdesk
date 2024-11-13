@@ -1,0 +1,44 @@
+{
+  "name": "@jood/helpdesk-react",
+  "version": "0.0.1",
+  "exports": {
+    "./react-query": {
+      "require": "./dist/react-query/index.js",
+      "import": "./dist/react-query/index.mjs",
+      "types": "./dist/react-query/index.d.ts"
+    }
+  },
+  "typesVersions": {
+    "*": {
+      "react-query": [
+        "dist/react-query/index.d.ts"
+      ]
+    }
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org",
+    "access": "public"
+  },
+  "files": [
+    "dist"
+  ],
+  "license": "MIT",
+  "scripts": {
+    "build": "rollup -c",
+    "build:watch": "rollup -c -w",
+    "build:clear": "rm -rf ./dist",
+    "test:run": "vitest run"
+  },
+  "dependencies": {},
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/molgga/jood-helpdesk.git"
+  },
+  "bugs": {
+    "url": "https://github.com/molgga/jood-helpdesk/issues",
+    "email": "molgga84@gmail.com"
+  },
+  "homepage": "https://molgga.github.io/jood-helpdesk",
+  "keywords": []
+}

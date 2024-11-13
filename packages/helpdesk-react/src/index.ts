@@ -1,0 +1,1 @@
+export const helpdeskReactEcho = () => 'foo';
