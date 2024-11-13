@@ -1,6 +1,6 @@
 {
   "name": "@jood/helpdesk-react",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "exports": {
     "./react-query": {
       "require": "./dist/react-query/index.js",

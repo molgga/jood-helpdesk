@@ -1,7 +1,9 @@
-# @jood/helpdesk-types
+# @jood/helpdesk-react
 
 **[📘 Document](https://molgga.github.io/jood-helpdesk/)**
 
+### @jood/helpdesk-react/react-query
+
 ```ts
-import type { ExtractParamType, ExtractArgsType } from '@jood/helpdesk-types';
+import type { infinitePagesUpdater, infinitePagesDeleter } from '@jood/helpdesk-react/react-query';
 ```
