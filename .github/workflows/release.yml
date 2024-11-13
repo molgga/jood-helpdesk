@@ -113,7 +113,7 @@ jobs:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
 
       - name: NPM publish react
-        if: ${{ always() && startsWith(github.ref, 'refs/tags/string') }}
+        if: ${{ always() && startsWith(github.ref, 'refs/tags/react') }}
         run: npm publish ./packages/helpdesk-react
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}

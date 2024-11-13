@@ -13,4 +13,6 @@
 <a href="https://www.npmjs.com/package/@jood/helpdesk-module" target="_blank"><img src="https://img.shields.io/npm/v/%40jood%2Fhelpdesk-module?style=flat-square&label=%40jood%2Fhelpdesk-module&color=%23333" /></a> \
 <a href="https://www.npmjs.com/package/@jood/helpdesk-number" target="_blank"><img src="https://img.shields.io/npm/v/%40jood%2Fhelpdesk-number?style=flat-square&label=%40jood%2Fhelpdesk-number&color=%23ff6600" /></a> \
 <a href="https://www.npmjs.com/package/@jood/helpdesk-point" target="_blank"><img src="https://img.shields.io/npm/v/%40jood%2Fhelpdesk-point?style=flat-square&label=%40jood%2Fhelpdesk-point&color=%2325d9b9" /></a> \
-<a href="https://www.npmjs.com/package/@jood/helpdesk-string" target="_blank"><img src="https://img.shields.io/npm/v/%40jood%2Fhelpdesk-string?style=flat-square&label=%40jood%2Fhelpdesk-string&color=%2348bf53" /></a>
+<a href="https://www.npmjs.com/package/@jood/helpdesk-react" target="_blank"><img src="https://img.shields.io/npm/v/%40jood%2Fhelpdesk-react?style=flat-square&label=%40jood%2Fhelpdesk-react&color=%23087ea4" /></a> \
+<a href="https://www.npmjs.com/package/@jood/helpdesk-string" target="_blank"><img src="https://img.shields.io/npm/v/%40jood%2Fhelpdesk-string?style=flat-square&label=%40jood%2Fhelpdesk-string&color=%2348bf53" /></a> \
+<a href="https://www.npmjs.com/package/@jood/helpdesk-types" target="_blank"><img src="https://img.shields.io/npm/v/%40jood%2Fhelpdesk-types?style=flat-square&label=%40jood%2Fhelpdesk-types&color=%23444444" /></a>
