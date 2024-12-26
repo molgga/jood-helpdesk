@@ -8,7 +8,7 @@ const sidebar = [
     items: [{ text: '개요', link: '/index' }],
   },
   {
-    collapsed: false,
+    collapsed: true,
     text: '@jood/helpdesk-array',
     items: [
       { text: 'availableOr', link: '/array/availableOr' },
@@ -27,7 +27,7 @@ const sidebar = [
     ],
   },
   {
-    collapsed: false,
+    collapsed: true,
     text: '@jood/helpdesk-date',
     items: [
       { text: 'isDate', link: '/date/isDate' },
@@ -45,7 +45,7 @@ const sidebar = [
     ],
   },
   {
-    collapsed: false,
+    collapsed: true,
     text: '@jood/helpdesk-color',
     items: [
       { text: 'hexToRgb', link: '/color/hexToRgb' },
@@ -55,7 +55,7 @@ const sidebar = [
     ],
   },
   {
-    collapsed: false,
+    collapsed: true,
     text: '@jood/helpdesk-point',
     items: [
       { text: 'intersect', link: '/point/intersect' },
@@ -66,7 +66,7 @@ const sidebar = [
     ],
   },
   {
-    collapsed: false,
+    collapsed: true,
     text: '@jood/helpdesk-module',
     items: [
       {
@@ -118,7 +118,7 @@ const sidebar = [
     ],
   },
   {
-    collapsed: false,
+    collapsed: true,
     text: '@jood/helpdesk-functional',
     items: [
       { text: 'debounce', link: '/functional/debounce' },
@@ -128,7 +128,7 @@ const sidebar = [
     ],
   },
   {
-    collapsed: false,
+    collapsed: true,
     text: '@jood/helpdesk-number',
     items: [
       { text: 'getRandomizer', link: '/number/getRandomizer' },
@@ -140,7 +140,7 @@ const sidebar = [
     ],
   },
   {
-    collapsed: false,
+    collapsed: true,
     text: '@jood/helpdesk-string',
     items: [
       { text: 'collapseMutiline', link: '/string/collapseMutiline' },
