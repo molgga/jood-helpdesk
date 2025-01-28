@@ -1,6 +1,6 @@
 {
   "name": "@jood/helpdesk-module",
-  "version": "0.0.14",
+  "version": "0.0.15",
   "exports": {
     "./browser-cookie": {
       "require": "./dist/browser-cookie/index.js",
@@ -51,6 +51,11 @@
       "require": "./dist/ttl-cache/index.js",
       "import": "./dist/ttl-cache/index.mjs",
       "types": "./dist/ttl-cache/index.d.ts"
+    },
+    "./visibility": {
+      "require": "./dist/visibility/index.js",
+      "import": "./dist/visibility/index.mjs",
+      "types": "./dist/visibility/index.d.ts"
     }
   },
   "typesVersions": {
