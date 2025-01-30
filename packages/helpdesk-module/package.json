@@ -112,7 +112,8 @@
   "dependencies": {
     "rxjs": "^7.0.0",
     "@jood/helpdesk-functional": "^0.0.1",
-    "@jood/helpdesk-string": "^0.0.1"
+    "@jood/helpdesk-string": "^0.0.1",
+    "@jood/helpdesk-date": "^0.0.1"
   },
   "devDependencies": {},
   "repository": {
