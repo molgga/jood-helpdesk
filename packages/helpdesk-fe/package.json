@@ -1,0 +1,36 @@
+{
+  "name": "@jood/helpdesk-fe",
+  "version": "0.1.0",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org",
+    "access": "public"
+  },
+  "files": [
+    "dist"
+  ],
+  "license": "MIT",
+  "scripts": {
+    "build": "rollup -c",
+    "build:watch": "rollup -c -w",
+    "build:clear": "rm -rf ./dist",
+    "test:run": "vitest run"
+  },
+  "dependencies": {
+    "@jood/helpdesk-date": "^0.0.1",
+    "@jood/helpdesk-number": "^0.0.1"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/molgga/jood-helpdesk.git"
+  },
+  "bugs": {
+    "url": "https://github.com/molgga/jood-helpdesk/issues",
+    "email": "molgga84@gmail.com"
+  },
+  "homepage": "https://molgga.github.io/jood-helpdesk",
+  "keywords": []
+}
